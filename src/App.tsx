@@ -11,13 +11,15 @@ import ProductDetails from "./pages/productDetails/ProductDetails";
 function App() {
   return (
     <div data-theme="light">
-      <Header />
-      <Routes>
-        <Route index path="" element={<Home />} />
-        <Route path="category" element={<Categories />} />
-        <Route path="shop" element={<Shop />} />
-        <Route path="shop/:id" element={<ProductDetails />} />
-      </Routes>
+      <div className="lg:px-16">
+        <Header />
+        <Routes>
+          <Route index path="" element={<Home />} />
+          <Route path="category" element={<Categories />} />
+          <Route path="shop" element={<Shop />} />
+          <Route path="shop/:id" element={<ProductDetails />} />
+        </Routes>
+      </div>
 
       <div className=""></div>
       <Footer />

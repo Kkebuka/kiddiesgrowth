@@ -1,5 +1,7 @@
 import QuantitySelector from "../../components/cart/QuantitySelector.tsx";
 import ProductImageCarousel from "../../components/cart/ProductImageCarousel.tsx";
+// import { useParams } from "react-router-dom";
+import OtherProducts from "./components/OtherProducts.js";
 
 export default function ProductDetails() {
   const product = {
@@ -10,8 +12,10 @@ export default function ProductDetails() {
     longDescription: "Interactive robot to educate and entertain.",
     price: 6000,
     option: "Add to Cart",
+    category: "Battery toys",
   };
 
+  // const {id} = useParams()
   // This method involves both global and direct fetch if not showed
   //  useEffect(() => {
   //   // First, try to find in global store
@@ -32,7 +36,7 @@ export default function ProductDetails() {
   // if (!product) return <div className="p-6 text-red-500">Product not found.</div>;
 
   return (
-    <div className="p-4 w-full bg-red-100">
+    <div className="p-4 w-full ">
       <div className="flex flex-col md:flex-row gap-6">
         {/* Carousel expects an array of images */}
         <ProductImageCarousel images={product.src} />
@@ -42,19 +46,31 @@ export default function ProductDetails() {
             {product.name}
           </h2>
 
-          <div className="card-actions justify-between items-center mt-4">
+          <div className="card-actions justify-between lg:justify-start items-center mt-4">
             <span className="text-lg font-bold text-green-600">
               ₦{product.price}
             </span>
             <QuantitySelector />
           </div>
+          <h2 className="card-title  sm:text-xl  lg:text-base ">
+            Category: {product.category}
+          </h2>
+          <div className="flex  gap-4">
+            <button className="btn btn-primary">Add to Cart</button>
+            <button className="btn btn-secondary">Buy Now</button>
+          </div>
         </div>
       </div>
 
       <div className="mt-6">
-        <h2 className="text-lg font-medium">Description</h2>
+        <div className="flex gap-4">
+          <h2 className="text-lg font-medium text-lg">Description</h2>
+          <h2 className="text-lg font-medium text-2xl ">Review</h2>
+        </div>
+
         <p className="text-gray-700 mt-2">{product.longDescription}</p>
       </div>
+      <OtherProducts />
     </div>
   );
 }
