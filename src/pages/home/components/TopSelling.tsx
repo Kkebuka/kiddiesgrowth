@@ -9,8 +9,46 @@ export default function TopSelling() {
       </h4>
 
       <div className="  grid grid-cols-2 gap-3 grid-rows-2 md:flex ">
-        <ProductCard />
-        <ProductCard /> <ProductCard /> <ProductCard />
+        <ProductCard
+          src={"https://via.placeholder.com/300x200"}
+          alt="image"
+          name="shoe"
+          description="long fnacy shoe"
+          price={24}
+          option="Buy now"
+        />
+        <ProductCard
+          src={"https://via.placeholder.com/300x200"}
+          alt="image"
+          name="shoe"
+          description="long fnacy shoe"
+          price={24}
+          option="Buy now"
+        />
+        <ProductCard
+          src={"https://via.placeholder.com/300x200"}
+          alt="image"
+          name="shoe"
+          description="long fnacy shoe"
+          price={24}
+          option="Buy now"
+        />
+        <ProductCard
+          src={"https://via.placeholder.com/300x200"}
+          alt="image"
+          name="shoe"
+          description="long fnacy shoe"
+          price={24}
+          option="Buy now"
+        />
+        <ProductCard
+          src={"https://via.placeholder.com/300x200"}
+          alt="image"
+          name="shoe"
+          description="long fnacy shoe"
+          price={24}
+          option="Buy now"
+        />
       </div>
 
       <button className="btn btn-secondary btn-sm sm:btn-md"> View More</button>

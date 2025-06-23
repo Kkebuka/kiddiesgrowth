@@ -6,12 +6,12 @@ import BestPicks from "./components/BestPicks";
 
 function Home() {
   return (
-    <>
+    <div className="bg-base-100 p-4">
       <Carousel />
       <TopCategories />
       <TopSelling />
       <BestPicks />
-    </>
+    </div>
   );
 }
 
