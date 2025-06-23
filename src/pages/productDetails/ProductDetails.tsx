@@ -64,8 +64,10 @@ export default function ProductDetails() {
 
       <div className="mt-6">
         <div className="flex gap-4">
-          <h2 className="text-lg font-medium text-lg">Description</h2>
-          <h2 className="text-lg font-medium text-2xl ">Review</h2>
+          <h2 className="textsm:text-lg font-medium lg:text-2xl ">
+            Description
+          </h2>
+          <h2 className="sm:text-lg font-medium lg:text-2xl ">Review</h2>
         </div>
 
         <p className="text-gray-700 mt-2">{product.longDescription}</p>
