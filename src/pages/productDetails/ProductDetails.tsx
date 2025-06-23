@@ -1,7 +1,6 @@
-import React from "react";
 import QuantitySelector from "../../components/cart/QuantitySelector.tsx";
 import ProductImageCarousel from "../../components/cart/ProductImageCarousel.tsx";
-import { useParams } from "react-router-dom";
+// import { useParams } from "react-router-dom";
 
 type DetailsType = {
   productId: number;
@@ -18,7 +17,7 @@ export default function ProductDetails({
   longDescription,
   price,
 }: DetailsType) {
-  const { id } = useParams();
+  // const { id } = useParams();
 
   return (
     <div className="p-4 w-full h-full bg-red-400">
