@@ -56,13 +56,16 @@ export default function CartPage() {
   );
 
   const whatsappMessage = encodeURIComponent(
-    `Hello, I'd like to place an order:\n\n${cartItems
+    `Hello KiddiesGrowth, I'd like to place an order:\n\n${cartItems
       .map(
         (item) =>
-          `• ${item.name} x${item.quantity} - ₦${item.price * item.quantity}`
+          `•[ID: ${item.id}] ${item.name} x${item.quantity} - ₦${
+            item.price * item.quantity
+          }`
       )
       .join("\n")}\n\nTotal: ₦${total}`
   );
+  const link = `https://api.whatsapp.com/send?phone=2348106111383&text=${whatsappMessage}`;
 
   return (
     <div className="min-h-screen bg-base-200 p-6">
@@ -131,7 +134,7 @@ export default function CartPage() {
             </div>
 
             <a
-              href={`https://wa.me/2348012345678?text=${whatsappMessage}`}
+              href={link}
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-success w-full mt-6"
