@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 export default function Register() {
   const [showPassword, setShowPassword] = useState(false);
@@ -65,12 +66,12 @@ export default function Register() {
         <div className="text-center mt-6">
           <p className="text-sm text-gray-500">
             Already have an account?{" "}
-            <a
-              href="/login"
+            <Link
+              to="/login"
               className="text-blue-600 font-semibold hover:underline"
             >
               Login here
-            </a>
+            </Link>
           </p>
         </div>
       </div>

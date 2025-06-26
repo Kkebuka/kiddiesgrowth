@@ -1,8 +1,9 @@
 import React from "react";
 import logo from "../../assets/images/kiddies-growth-no_BG.png";
-import { FaShoppingCart } from "react-icons/fa";
+import { FaShoppingCart, FaUser } from "react-icons/fa";
 import { FaSearch } from "react-icons/fa";
 import { Link } from "react-router-dom";
+
 function Header() {
   return (
     <div className="shadow-sm ">
@@ -65,13 +66,16 @@ function Header() {
           </ul>
         </div>
         <div className="navbar-end">
+          <a className="btn lg:hidden">
+            <FaUser />
+          </a>
           <a className="btn">
             <FaShoppingCart />
           </a>
         </div>
       </div>
       <div className="px-4">
-        <label className="input w-full ">
+        <label className="input w-full lg:hidden ">
           <input
             type="search"
             className="grow"

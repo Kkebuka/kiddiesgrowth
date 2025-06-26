@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 export default function Login() {
   const [showPassword, setShowPassword] = useState(false);
@@ -62,13 +63,13 @@ export default function Login() {
         {/* Footer */}
         <div className="text-center mt-6">
           <p className="text-sm text-gray-500">
-            Don’t have an account?{" "}
-            <a
-              href="/signup"
+            Don’t have an account?
+            <Link
+              to="/register"
               className="text-blue-600 font-semibold hover:underline"
             >
               Sign up
-            </a>
+            </Link>
           </p>
         </div>
       </div>
