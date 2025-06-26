@@ -7,6 +7,8 @@ import { Routes, Route } from "react-router";
 import Categories from "./pages/categories/Categories";
 import Shop from "./pages/shop/Shop";
 import ProductDetails from "./pages/productDetails/ProductDetails";
+import Login from "./pages/login/Login";
+import Register from "./pages/register/Register";
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
           <Route path="category" element={<Categories />} />
           <Route path="shop" element={<Shop />} />
           <Route path="shop/:id" element={<ProductDetails />} />
+          <Route path="login" element={<Login />} />
+          <Route path="register" element={<Register />} />
         </Routes>
       </div>
 

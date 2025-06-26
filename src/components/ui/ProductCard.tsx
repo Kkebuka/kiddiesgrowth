@@ -6,7 +6,7 @@ type ProductType = {
   name: string;
   description: string;
   price: number;
-  option: string;
+  option?: string;
 };
 
 function ProductCard({
@@ -27,7 +27,11 @@ function ProductCard({
         <p className="text-sm sm:text-base">{description}</p>
         <div className="card-actions justify-between items-center mt-4">
           <span className="text-lg font-bold text-primary">N{price}</span>
-          <button className="btn btn-primary btn-sm sm:btn-md">{option}</button>
+          {option && (
+            <button className="btn btn-primary btn-sm sm:btn-md">
+              {option}
+            </button>
+          )}
         </div>
       </div>
     </div>

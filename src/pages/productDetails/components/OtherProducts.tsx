@@ -15,7 +15,6 @@ export default function OtherProducts() {
           name="shoe"
           description="long fnacy shoe"
           price={24}
-          option="Buy now"
         />
         <ProductCard
           src={"https://via.placeholder.com/300x200"}
@@ -23,7 +22,6 @@ export default function OtherProducts() {
           name="shoe"
           description="long fnacy shoe"
           price={24}
-          option="Buy now"
         />
         <ProductCard
           src={"https://via.placeholder.com/300x200"}
@@ -31,7 +29,6 @@ export default function OtherProducts() {
           name="shoe"
           description="long fnacy shoe"
           price={24}
-          option="Buy now"
         />
         <ProductCard
           src={"https://via.placeholder.com/300x200"}
@@ -39,7 +36,6 @@ export default function OtherProducts() {
           name="shoe"
           description="long fnacy shoe"
           price={24}
-          option="Buy now"
         />
       </div>
     </div>
