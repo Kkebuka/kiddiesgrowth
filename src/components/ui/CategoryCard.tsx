@@ -1,22 +1,25 @@
-import React, { Component } from "react";
+type Props = {
+  name: string;
+  image: string;
+  productCount?: number; // optional
+};
 
-export class CategoryCard extends Component {
-  render() {
-    return (
-      <div className="card bg-base-100 w-96 shadow-sm">
-        <figure className="px-10 pt-10">
-          <img
-            src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-            alt="Shoes"
-            className="rounded-xl"
-          />
-        </figure>
-        <div className="card-body items-center text-center">
-          <h2 className="card-title">Card Title</h2>
-        </div>
+export default function CategoryCard({ name, image, productCount }: Props) {
+  return (
+    <div className="card bg-base-100 shadow-md hover:shadow-lg transition-transform hover:-translate-y-1 duration-300">
+      <figure className="px-4 pt-4">
+        <img
+          src={image}
+          alt={name}
+          className="rounded-xl h-32 w-full object-cover"
+        />
+      </figure>
+      <div className="card-body items-center text-center">
+        <h2 className="card-title text-lg font-semibold">{name}</h2>
+        {productCount !== undefined && (
+          <p className="text-sm text-gray-500">{productCount} products</p>
+        )}
       </div>
-    );
-  }
+    </div>
+  );
 }
-
-export default CategoryCard;
