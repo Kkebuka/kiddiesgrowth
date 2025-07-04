@@ -12,6 +12,7 @@ import Register from "./pages/register/Register";
 import CartPage from "./pages/cartPage/CartPage";
 import AccountPage from "./pages/accountPage/AccountPage";
 import AboutUsPage from "./pages/aboutUsPage/AboutUsPage";
+import DashboardPage from "./admin/pages/dashoardPage.jsx/DashboardPage";
 
 function App() {
   return (
@@ -29,6 +30,12 @@ function App() {
           <Route path="about" element={<AboutUsPage />} />
           <Route path="register" element={<Register />} />
         </Routes>
+
+        {/* <Route path="" element={<DashboardPage />}>
+          <Route index element={<Dashboard />} />
+          <Route path="products" element={<Products />} />
+          <Route path="orders" element={<Orders />} />
+        </Route> */}
       </div>
 
       <div className=""></div>
