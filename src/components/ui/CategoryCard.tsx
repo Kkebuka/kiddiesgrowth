@@ -1,8 +1,4 @@
-type Props = {
-  name: string;
-  image: string;
-  productCount?: number; // optional
-};
+import { type Props } from "../../types/types";
 
 export default function CategoryCard({ name, image, productCount }: Props) {
   return (

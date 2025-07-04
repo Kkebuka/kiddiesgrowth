@@ -17,7 +17,7 @@ import AboutUsPage from "./pages/aboutUsPage/AboutUsPage";
 function App() {
   console.log(
     "Cloudinary Cloud Name:",
-    import.meta.env.VITE_CLOUDINARY_CLOUD_NAME
+    import.meta.env.VITE_CLOUDINARY_UPLOAD_PRESET
   );
   return (
     <div data-theme="light">

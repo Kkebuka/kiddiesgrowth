@@ -4,3 +4,9 @@ export type CategoryType = {
   productCount: number;
   image: string;
 };
+
+export type Props = {
+  name: string;
+  image: string;
+  productCount?: number; // optional
+};

@@ -30,18 +30,10 @@ function Header() {
             tabIndex={0}
             className="menu menu-sm dropdown-content bg-base-100 p-4 "
           >
-            <Link to="/">
-              <a>Home</a>
-            </Link>
-            <Link to="/shop">
-              <a>Shop</a>
-            </Link>
-            <Link to="/category">
-              <a>Category</a>
-            </Link>
-            <Link to="/about">
-              <a>About Us</a>
-            </Link>
+            <Link to="/">Home</Link>
+            <Link to="/shop">Shop</Link>
+            <Link to="/category">Category</Link>
+            <Link to="/about">About Us</Link>
           </ul>
         </div>
         <div className="navbar-start">
@@ -51,18 +43,10 @@ function Header() {
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1 space-x-6">
-            <Link to="/">
-              <a>Home</a>
-            </Link>
-            <Link to="/shop">
-              <a>Shop</a>
-            </Link>
-            <Link to="/category">
-              <a>Category</a>
-            </Link>
-            <Link to="/about">
-              <a>About Us</a>
-            </Link>
+            <Link to="/">Home</Link>
+            <Link to="/shop">Shop</Link>
+            <Link to="/category">Category</Link>
+            <Link to="/about">About Us</Link>
           </ul>
         </div>
         <div className="navbar-end">
