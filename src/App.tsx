@@ -21,7 +21,7 @@ function App() {
   );
   return (
     <div data-theme="light">
-      <div className="lg:px-16">
+      <div className="lg:px-12">
         <Header />
         <Routes>
           <Route index path="" element={<Home />} />

@@ -1,12 +1,23 @@
-export type CategoryType = {
-  id: number;
-  name: string;
-  productCount: number;
-  image: string;
-};
+// export type CategoryType = {
+//   id: number;
+//   name: string;
+//   productCount: number;
+//   image: string;
+// };
 
-export type Props = {
+export type CategoryProps = {
+  id?: number;
   name: string;
   image: string;
   productCount?: number; // optional
+};
+
+export type ProductType = {
+  id: number;
+  src: string;
+  alt: string;
+  name: string;
+  description?: string;
+  price: number;
+  option?: string;
 };

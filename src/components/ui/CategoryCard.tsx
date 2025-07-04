@@ -1,6 +1,10 @@
-import { type Props } from "../../types/types";
+import { type CategoryProps } from "../../types/types";
 
-export default function CategoryCard({ name, image, productCount }: Props) {
+export default function CategoryCard({
+  name,
+  image,
+  productCount,
+}: CategoryProps) {
   return (
     <div className="card bg-base-100 shadow-md hover:shadow-lg transition-transform hover:-translate-y-1 duration-300">
       <figure className="px-4 pt-4">
