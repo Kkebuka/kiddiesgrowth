@@ -12,9 +12,13 @@ import Register from "./pages/register/Register";
 import CartPage from "./pages/cartPage/CartPage";
 import AccountPage from "./pages/accountPage/AccountPage";
 import AboutUsPage from "./pages/aboutUsPage/AboutUsPage";
-import DashboardPage from "./admin/pages/dashoardPage.jsx/DashboardPage";
+// import DashboardPage from "./admin/pages/dashoardPage.jsx/DashboardPage";
 
 function App() {
+  console.log(
+    "Cloudinary Cloud Name:",
+    import.meta.env.VITE_CLOUDINARY_CLOUD_NAME
+  );
   return (
     <div data-theme="light">
       <div className="lg:px-16">
