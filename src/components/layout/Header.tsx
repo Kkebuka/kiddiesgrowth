@@ -37,9 +37,9 @@ function Header() {
           </ul>
         </div>
         <div className="navbar-start">
-          <a className="">
+          <Link to="/" className="">
             <img src={logo} alt="" className="w-20" />
-          </a>
+          </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1 space-x-6">
@@ -53,9 +53,9 @@ function Header() {
           <a className="btn lg:hidden">
             <FaUser />
           </a>
-          <a className="btn">
+          <Link to="/cart" className="btn">
             <FaShoppingCart />
-          </a>
+          </Link>
         </div>
       </div>
       <div className="px-4">

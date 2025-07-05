@@ -1,8 +1,8 @@
 import CategoryCard from "../../components/ui/CategoryCard";
-import { type Props } from "../../types/types";
+import { type CategoryProps } from "../../types/types";
 
 export default function Categories() {
-  const categories: Props[] = [
+  const categories: CategoryProps[] = [
     {
       name: "Electronics",
       image: "https://images.unsplash.com/photo-1550009158-9ebf69173e03",

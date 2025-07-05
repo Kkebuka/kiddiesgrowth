@@ -1,5 +1,4 @@
-import React from "react";
-import { Outlet, NavLink } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 // import { LayoutDashboard, Package, ShoppingCart, Users } from "lucide-react";
 
 export default function DashboardPage() {
@@ -13,7 +12,7 @@ export default function DashboardPage() {
           </h1>
         </div>
         <nav className="p-4 flex flex-col gap-2">
-          <NavItem to="." icon={<LayoutDashboard size={20} />}>
+          {/* <NavItem to="." icon={<LayoutDashboard size={20} />}>
             Dashboard
           </NavItem>
           <NavItem to="products" icon={<Package size={20} />}>
@@ -24,7 +23,7 @@ export default function DashboardPage() {
           </NavItem>
           <NavItem to="users" icon={<Users size={20} />}>
             Users
-          </NavItem>
+          </NavItem> */}
         </nav>
       </aside>
 
@@ -42,27 +41,27 @@ export default function DashboardPage() {
   );
 }
 
-function NavItem({
-  to,
-  icon,
-  children,
-}: {
-  to: string;
-  icon: React.ReactNode;
-  children: React.ReactNode;
-}) {
-  return (
-    <NavLink
-      to={to}
-      end
-      className={({ isActive }) =>
-        `flex items-center gap-3 p-3 rounded-md hover:bg-gray-100 transition ${
-          isActive ? "bg-gray-200 font-semibold text-primary" : "text-gray-700"
-        }`
-      }
-    >
-      {icon}
-      {children}
-    </NavLink>
-  );
-}
+// function NavItem({
+//   to,
+//   icon,
+//   children,
+// }: {
+//   to: string;
+//   icon: React.ReactNode;
+//   children: React.ReactNode;
+// }) {
+//   return (
+//     <NavLink
+//       to={to}
+//       end
+//       className={({ isActive }) =>
+//         `flex items-center gap-3 p-3 rounded-md hover:bg-gray-100 transition ${
+//           isActive ? "bg-gray-200 font-semibold text-primary" : "text-gray-700"
+//         }`
+//       }
+//     >
+//       {icon}
+//       {children}
+//     </NavLink>
+//   );
+// }

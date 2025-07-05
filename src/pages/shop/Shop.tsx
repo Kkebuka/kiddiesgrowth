@@ -2,9 +2,10 @@ import React from "react";
 import ProductCard from "../../components/ui/ProductCard";
 import { Link } from "react-router-dom";
 import { FaFilter } from "react-icons/fa";
+import { type ProductType } from "../../types/types";
 
 export default function Products() {
-  const products: Array<ProductType & { id: number }> = [
+  const products: ProductType[] = [
     {
       id: 1,
       src: "https://images.unsplash.com/photo-1546868871-7041f2a55e12",
