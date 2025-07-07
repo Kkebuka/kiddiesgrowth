@@ -5,15 +5,15 @@ import { Link } from "react-router-dom";
 
 export default function TopSelling() {
   const products: ProductType[] = [
-    {
-      id: 4,
-      src: "https://images.unsplash.com/photo-1542291026-7eec264c27ff",
-      alt: "Running Shoes",
-      name: "Performance Running Shoes",
-      description: "Lightweight shoes with responsive cushioning",
-      price: 12999,
-      option: "Buy Now",
-    },
+    // {
+    //   id: 7,
+    //   src: "https://images.unsplash.com/photo-1542291026-7eec264c27ff",
+    //   alt: "Running Shoes",
+    //   name: "Performance Running Shoes",
+    //   description: "Lightweight shoes with responsive cushioning",
+    //   price: 12999,
+    //   option: "Buy Now",
+    // },
     {
       id: 3,
       src: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e",

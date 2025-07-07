@@ -1,8 +1,6 @@
 import "./App.css";
 import Home from "./pages/home/Home";
-import Header from "./components/layout/Header";
-import BottomNavBar from "./components/layout/BottomNavBar";
-import Footer from "./components/layout/Footer";
+import MainLayout from "./components/layout/MainLayout";
 import { Routes, Route } from "react-router";
 import Categories from "./pages/categories/Categories";
 import Shop from "./pages/shop/Shop";
@@ -20,32 +18,25 @@ function App() {
     import.meta.env.VITE_CLOUDINARY_UPLOAD_PRESET
   );
   return (
-    <div data-theme="light">
-      <div className="lg:px-12">
-        <Header />
-        <Routes>
-          <Route index path="" element={<Home />} />
-          <Route path="category" element={<Categories />} />
-          <Route path="shop" element={<Shop />} />
-          <Route path="shop/:id" element={<ProductDetails />} />
-          <Route path="login" element={<Login />} />
-          <Route path="cart" element={<CartPage />} />
-          <Route path="account" element={<AccountPage />} />
-          <Route path="about" element={<AboutUsPage />} />
-          <Route path="register" element={<Register />} />
-        </Routes>
+    <Routes>
+      <Route path="/" element={<MainLayout />}>
+        <Route index path="" element={<Home />} />
+        <Route path="category" element={<Categories />} />
+        <Route path="shop" element={<Shop />} />
+        <Route path="shop/:id" element={<ProductDetails />} />
+        <Route path="login" element={<Login />} />
+        <Route path="cart" element={<CartPage />} />
+        <Route path="account" element={<AccountPage />} />
+        <Route path="about" element={<AboutUsPage />} />
+        <Route path="register" element={<Register />} />
+      </Route>
 
-        {/* <Route path="" element={<DashboardPage />}>
+      {/* <Route path="" element={<DashboardPage />}>
           <Route index element={<Dashboard />} />
           <Route path="products" element={<Products />} />
           <Route path="orders" element={<Orders />} />
         </Route> */}
-      </div>
-
-      <div className=""></div>
-      <Footer />
-      <BottomNavBar />
-    </div>
+    </Routes>
   );
 }
 

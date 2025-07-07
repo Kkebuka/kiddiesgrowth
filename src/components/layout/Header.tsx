@@ -2,7 +2,7 @@ import React from "react";
 import logo from "../../assets/images/kiddies-growth-no_BG.png";
 import { FaShoppingCart, FaUser } from "react-icons/fa";
 import { FaSearch } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function Header() {
   return (
@@ -30,32 +30,60 @@ function Header() {
             tabIndex={0}
             className="menu menu-sm dropdown-content bg-base-100 p-4 "
           >
-            <Link to="/">Home</Link>
-            <Link to="/shop">Shop</Link>
-            <Link to="/category">Category</Link>
-            <Link to="/about">About Us</Link>
+            <NavLink to="/">Home</NavLink>
+            <NavLink to="/shop">Shop</NavLink>
+            <NavLink to="/category">Category</NavLink>
+            <NavLink to="/about">About Us</NavLink>
           </ul>
         </div>
         <div className="navbar-start">
-          <Link to="/" className="">
+          <NavLink to="/" className="">
             <img src={logo} alt="" className="w-20" />
-          </Link>
+          </NavLink>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1 space-x-6">
-            <Link to="/">Home</Link>
-            <Link to="/shop">Shop</Link>
-            <Link to="/category">Category</Link>
-            <Link to="/about">About Us</Link>
+            <NavLink
+              to="/"
+              className={({ isActive }) =>
+                isActive ? "text-primary font-bold" : "text-gray-500"
+              }
+            >
+              Home
+            </NavLink>
+            <NavLink
+              to="/shop"
+              className={({ isActive }) =>
+                isActive ? "text-primary font-bold" : "text-gray-500"
+              }
+            >
+              Shop
+            </NavLink>
+            <NavLink
+              to="/category"
+              className={({ isActive }) =>
+                isActive ? "text-primary font-bold" : "text-gray-500"
+              }
+            >
+              Category
+            </NavLink>
+            <NavLink
+              to="/about"
+              className={({ isActive }) =>
+                isActive ? "text-primary font-bold" : "text-gray-500"
+              }
+            >
+              About Us
+            </NavLink>
           </ul>
         </div>
         <div className="navbar-end">
           <a className="btn lg:hidden">
             <FaUser />
           </a>
-          <Link to="/cart" className="btn">
+          <NavLink to="/cart" className="btn">
             <FaShoppingCart />
-          </Link>
+          </NavLink>
         </div>
       </div>
       <div className="px-4">

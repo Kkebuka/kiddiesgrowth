@@ -12,6 +12,7 @@ export default function CategoryCard({
           src={image}
           alt={name}
           className="rounded-xl h-32 w-full object-cover"
+          loading="lazy"
         />
       </figure>
       <div className="card-body items-center text-center">

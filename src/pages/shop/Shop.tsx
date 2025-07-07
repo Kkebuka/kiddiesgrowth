@@ -1,6 +1,6 @@
 import React from "react";
 import ProductCard from "../../components/ui/ProductCard";
-import { Link } from "react-router-dom";
+
 import { FaFilter } from "react-icons/fa";
 import { type ProductType } from "../../types/types";
 
@@ -125,9 +125,7 @@ export default function Products() {
       </div>
       <div className="  w-full grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-4 auto-rows-fr">
         {products.map((product) => (
-          <Link to={`/shop/${product.id}`} key={product?.id}>
-            <ProductCard {...product} key={product.id} />
-          </Link>
+          <ProductCard {...product} key={product.id} />
         ))}
       </div>
       <div className="flex justify-center">

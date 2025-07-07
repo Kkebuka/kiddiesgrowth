@@ -29,7 +29,11 @@ const AutoCarousel = () => {
               index === activeIndex ? "block" : "hidden"
             }`}
           >
-            <img src={img} className="w-full object-cover h-96" />
+            <img
+              src={img}
+              className="w-full object-cover h-96"
+              loading="lazy"
+            />
           </div>
         ))}
       </div>
