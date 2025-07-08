@@ -6,6 +6,8 @@ type CartContextType = {
   cart: CartItemType[];
   addToCart: (product: ProductType) => void;
   removeFromCart: (id: number) => void;
+  increaseQuantity: (id: number) => void;
+  decreaseQuantity: (id: number) => void;
   clearCart: () => void;
 };
 
@@ -37,8 +39,27 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({
             : item
         );
       }
+      console.log(prev);
       return [...prev, { ...product, quantity: 1 }];
     });
+  };
+
+  const increaseQuantity = (id: number) => {
+    setCart((prev) =>
+      prev.map((item) =>
+        item.id === id ? { ...item, quantity: item.quantity + 1 } : item
+      )
+    );
+  };
+
+  const decreaseQuantity = (id: number) => {
+    setCart((prev) =>
+      prev.map((item) =>
+        item.id === id && item.quantity > 1
+          ? { ...item, quantity: item.quantity - 1 }
+          : item
+      )
+    );
   };
 
   const removeFromCart = (id: number) => {
@@ -49,7 +70,14 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({
 
   return (
     <CartContext.Provider
-      value={{ cart, addToCart, removeFromCart, clearCart }}
+      value={{
+        cart,
+        addToCart,
+        removeFromCart,
+        clearCart,
+        increaseQuantity,
+        decreaseQuantity,
+      }}
     >
       {children}
     </CartContext.Provider>

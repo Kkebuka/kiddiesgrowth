@@ -1,5 +1,6 @@
 import React from "react";
 import { FaTrash } from "react-icons/fa";
+import { useCart } from "../../hooks/useCart";
 
 type CartItem = {
   id: number;
@@ -34,6 +35,7 @@ const dummyCart: CartItem[] = [
 ];
 
 export default function CartPage() {
+  const { cart, removeFromCart } = useCart();
   const [cartItems, setCartItems] = React.useState<CartItem[]>(dummyCart);
 
   const updateQuantity = (id: number, delta: number) => {
@@ -46,14 +48,7 @@ export default function CartPage() {
     );
   };
 
-  const removeItem = (id: number) => {
-    setCartItems((prev) => prev.filter((item) => item.id !== id));
-  };
-
-  const total = cartItems.reduce(
-    (acc, item) => acc + item.price * item.quantity,
-    0
-  );
+  const total = cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
 
   const whatsappMessage = encodeURIComponent(
     `Hello KiddiesGrowth, I'd like to place an order:\n\n${cartItems
@@ -66,6 +61,7 @@ export default function CartPage() {
       .join("\n")}\n\nTotal: ₦${total}`
   );
   const link = `https://api.whatsapp.com/send?phone=2348106111383&text=${whatsappMessage}`;
+  console.log(cart);
 
   return (
     <div className="min-h-screen bg-base-200 p-6">
@@ -77,14 +73,14 @@ export default function CartPage() {
         ) : (
           <>
             <div className="space-y-4">
-              {cartItems.map((item) => (
+              {cart.map((item) => (
                 <div
                   key={item.id}
                   className="flex items-center justify-between bg-base-100 p-4 rounded-lg shadow-sm"
                 >
                   <div className="flex items-center gap-4">
                     <img
-                      src={item.image}
+                      src={item.src}
                       alt={item.name}
                       className="w-20 h-20 object-cover rounded"
                     />
@@ -115,7 +111,7 @@ export default function CartPage() {
                     </div>
                     <button
                       className="btn btn-sm btn-error text-white"
-                      onClick={() => removeItem(item.id)}
+                      onClick={() => removeFromCart(item.id)}
                     >
                       <FaTrash />
                     </button>

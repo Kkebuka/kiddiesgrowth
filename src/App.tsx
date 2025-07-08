@@ -19,8 +19,8 @@ function App() {
     import.meta.env.VITE_CLOUDINARY_UPLOAD_PRESET
   );
   return (
-    <Routes>
-      <CartProvider>
+    <CartProvider>
+      <Routes>
         <Route path="/" element={<MainLayout />}>
           <Route index path="" element={<Home />} />
           <Route path="category" element={<Categories />} />
@@ -32,14 +32,14 @@ function App() {
           <Route path="about" element={<AboutUsPage />} />
           <Route path="register" element={<Register />} />
         </Route>
-      </CartProvider>
 
-      {/* <Route path="" element={<DashboardPage />}>
+        {/* <Route path="" element={<DashboardPage />}>
           <Route index element={<Dashboard />} />
           <Route path="products" element={<Products />} />
           <Route path="orders" element={<Orders />} />
         </Route> */}
-    </Routes>
+      </Routes>
+    </CartProvider>
   );
 }
 
