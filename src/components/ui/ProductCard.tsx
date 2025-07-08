@@ -10,7 +10,7 @@ type ProductCardProps = ProductType & {
 function ProductCard({
   id,
   src,
-  alt,
+  category,
   name,
   description,
   price,
@@ -22,7 +22,7 @@ function ProductCard({
   const handleAddToCart = (e: React.MouseEvent) => {
     e.stopPropagation(); // prevent navigating when button is clicked
     if (onAddToCart) {
-      onAddToCart({ id, src, alt, name, description, price, option });
+      onAddToCart({ id, src, category, name, description, price, option });
     }
   };
 
@@ -32,7 +32,7 @@ function ProductCard({
         <figure>
           <img
             src={`${src}?w=500&h=500&auto=format&fit=crop`} // 🌟 Optimized
-            alt={alt}
+            alt={name}
             loading="lazy"
             className="w-full h-48 object-cover"
           />
