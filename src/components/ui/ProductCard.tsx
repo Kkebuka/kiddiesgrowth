@@ -1,6 +1,11 @@
 import React from "react";
 import { type ProductType } from "../../types/types";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+// import { MdOutlineAddChart } from "react-icons/md";
+
+type ProductCardProps = ProductType & {
+  onAddToCart?: (product: ProductType) => void;
+};
 
 function ProductCard({
   id,
@@ -10,13 +15,15 @@ function ProductCard({
   description,
   price,
   option,
-}: ProductType) {
-  const navigate = useNavigate();
+  onAddToCart,
+}: ProductCardProps) {
+  // const navigate = useNavigate();
 
-  const handleBuyNow = (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.stopPropagation(); // 🔥 Prevents parent click
-    // Optionally: Add to cart logic here
-    navigate(`/cart`); // 🔄 Or wherever "Buy Now" should go
+  const handleAddToCart = (e: React.MouseEvent) => {
+    e.stopPropagation(); // prevent navigating when button is clicked
+    if (onAddToCart) {
+      onAddToCart({ id, src, alt, name, description, price, option });
+    }
   };
 
   return (
@@ -48,7 +55,7 @@ function ProductCard({
 
           {option && (
             <button
-              onClick={handleBuyNow}
+              onClick={handleAddToCart}
               className="btn btn-primary btn-sm sm:btn-md"
             >
               {option}

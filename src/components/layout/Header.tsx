@@ -46,7 +46,9 @@ function Header() {
             <NavLink
               to="/"
               className={({ isActive }) =>
-                isActive ? "text-primary font-bold" : "text-gray-500"
+                isActive
+                  ? "text-primary font-bold  border-b-2 border-blue-600"
+                  : "text-gray-500"
               }
             >
               Home
@@ -54,7 +56,9 @@ function Header() {
             <NavLink
               to="/shop"
               className={({ isActive }) =>
-                isActive ? "text-primary font-bold" : "text-gray-500"
+                isActive
+                  ? "text-primary font-bold  border-b-2 border-blue-600"
+                  : "text-gray-500"
               }
             >
               Shop
@@ -62,7 +66,9 @@ function Header() {
             <NavLink
               to="/category"
               className={({ isActive }) =>
-                isActive ? "text-primary font-bold" : "text-gray-500"
+                isActive
+                  ? "text-primary font-bold  border-b-2 border-blue-600"
+                  : "text-gray-500"
               }
             >
               Category
@@ -70,7 +76,9 @@ function Header() {
             <NavLink
               to="/about"
               className={({ isActive }) =>
-                isActive ? "text-primary font-bold" : "text-gray-500"
+                isActive
+                  ? "text-primary font-bold  border-b-2 border-blue-600"
+                  : "text-gray-500"
               }
             >
               About Us
