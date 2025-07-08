@@ -21,3 +21,7 @@ export type ProductType = {
   price: number;
   option?: string;
 };
+
+export type CartItemType = ProductType & {
+  quantity: number;
+};

@@ -115,6 +115,8 @@ export default function Products() {
     },
   ];
 
+  const addToCart = (product) => {};
+
   return (
     <div className="p-4 flex flex-col gap-4">
       <div className="flex justify-end">
@@ -125,7 +127,7 @@ export default function Products() {
       </div>
       <div className="  w-full grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-4 auto-rows-fr">
         {products.map((product) => (
-          <ProductCard {...product} key={product.id} />
+          <ProductCard {...product} key={product.id} onAddToCart={addToCart} />
         ))}
       </div>
       <div className="flex justify-center">
