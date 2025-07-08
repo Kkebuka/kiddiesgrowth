@@ -10,6 +10,7 @@ import Register from "./pages/register/Register";
 import CartPage from "./pages/cartPage/CartPage";
 import AccountPage from "./pages/accountPage/AccountPage";
 import AboutUsPage from "./pages/aboutUsPage/AboutUsPage";
+import { CartProvider } from "./contexts/CartContext";
 // import DashboardPage from "./admin/pages/dashoardPage.jsx/DashboardPage";
 
 function App() {
@@ -19,17 +20,19 @@ function App() {
   );
   return (
     <Routes>
-      <Route path="/" element={<MainLayout />}>
-        <Route index path="" element={<Home />} />
-        <Route path="category" element={<Categories />} />
-        <Route path="shop" element={<Shop />} />
-        <Route path="shop/:id" element={<ProductDetails />} />
-        <Route path="login" element={<Login />} />
-        <Route path="cart" element={<CartPage />} />
-        <Route path="account" element={<AccountPage />} />
-        <Route path="about" element={<AboutUsPage />} />
-        <Route path="register" element={<Register />} />
-      </Route>
+      <CartProvider>
+        <Route path="/" element={<MainLayout />}>
+          <Route index path="" element={<Home />} />
+          <Route path="category" element={<Categories />} />
+          <Route path="shop" element={<Shop />} />
+          <Route path="shop/:id" element={<ProductDetails />} />
+          <Route path="login" element={<Login />} />
+          <Route path="cart" element={<CartPage />} />
+          <Route path="account" element={<AccountPage />} />
+          <Route path="about" element={<AboutUsPage />} />
+          <Route path="register" element={<Register />} />
+        </Route>
+      </CartProvider>
 
       {/* <Route path="" element={<DashboardPage />}>
           <Route index element={<Dashboard />} />

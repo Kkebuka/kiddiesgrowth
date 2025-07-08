@@ -1,10 +1,12 @@
-import React from "react";
 import ProductCard from "../../components/ui/ProductCard";
 
 import { FaFilter } from "react-icons/fa";
 import { type ProductType } from "../../types/types";
+import { useCart } from "../../hooks/useCart";
 
 export default function Products() {
+  const { addToCart } = useCart();
+
   const products: ProductType[] = [
     {
       id: 1,
@@ -114,8 +116,6 @@ export default function Products() {
       option: "Buy Now",
     },
   ];
-
-  const addToCart = (product) => {};
 
   return (
     <div className="p-4 flex flex-col gap-4">
