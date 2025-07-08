@@ -35,7 +35,8 @@ const dummyCart: CartItem[] = [
 ];
 
 export default function CartPage() {
-  const { cart, removeFromCart } = useCart();
+  const { cart, removeFromCart, increaseQuantity, decreaseQuantity } =
+    useCart();
   const [cartItems, setCartItems] = React.useState<CartItem[]>(dummyCart);
 
   const updateQuantity = (id: number, delta: number) => {
@@ -95,7 +96,7 @@ export default function CartPage() {
                     <div className="join">
                       <button
                         className="join-item btn btn-sm"
-                        onClick={() => updateQuantity(item.id, -1)}
+                        onClick={() => increaseQuantity(item.id)}
                       >
                         -
                       </button>
@@ -104,7 +105,7 @@ export default function CartPage() {
                       </button>
                       <button
                         className="join-item btn btn-sm"
-                        onClick={() => updateQuantity(item.id, 1)}
+                        onClick={() => decreaseQuantity(item.id)}
                       >
                         +
                       </button>
