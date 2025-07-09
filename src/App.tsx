@@ -11,6 +11,7 @@ import CartPage from "./pages/cartPage/CartPage";
 import AccountPage from "./pages/accountPage/AccountPage";
 import AboutUsPage from "./pages/aboutUsPage/AboutUsPage";
 import { CartProvider } from "./contexts/CartContext";
+import CategoryProducts from "./pages/categories/CategoryProducts";
 // import DashboardPage from "./admin/pages/dashoardPage.jsx/DashboardPage";
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
           <Route path="account" element={<AccountPage />} />
           <Route path="about" element={<AboutUsPage />} />
           <Route path="register" element={<Register />} />
+          <Route path="category/:categoryName" element={<CategoryProducts />} />
         </Route>
 
         {/* <Route path="" element={<DashboardPage />}>
