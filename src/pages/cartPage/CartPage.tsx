@@ -2,57 +2,25 @@ import React from "react";
 import { FaTrash } from "react-icons/fa";
 import { useCart } from "../../hooks/useCart";
 
-type CartItem = {
-  id: number;
-  name: string;
-  image: string;
-  price: number;
-  quantity: number;
-};
-
-const dummyCart: CartItem[] = [
-  {
-    id: 1,
-    name: "Cuddly Teddy Bear",
-    image: "https://via.placeholder.com/150?text=Teddy+Bear",
-    price: 3000,
-    quantity: 2,
-  },
-  {
-    id: 2,
-    name: "Colorful Puzzle Set",
-    image: "https://via.placeholder.com/150?text=Puzzle+Set",
-    price: 2200,
-    quantity: 1,
-  },
-  {
-    id: 3,
-    name: "Mini Toy Car",
-    image: "https://via.placeholder.com/150?text=Toy+Car",
-    price: 1500,
-    quantity: 3,
-  },
-];
-
 export default function CartPage() {
   const { cart, removeFromCart, increaseQuantity, decreaseQuantity } =
     useCart();
-  const [cartItems, setCartItems] = React.useState<CartItem[]>(dummyCart);
+  // const [cartItems, setCartItems] = React.useState<CartItem[]>(dummyCart);
 
-  const updateQuantity = (id: number, delta: number) => {
-    setCartItems((prev) =>
-      prev.map((item) =>
-        item.id === id
-          ? { ...item, quantity: Math.max(1, item.quantity + delta) }
-          : item
-      )
-    );
-  };
+  // const updateQuantity = (id: number, delta: number) => {
+  //   setCartItems((prev) =>
+  //     prev.map((item) =>
+  //       item.id === id
+  //         ? { ...item, quantity: Math.max(1, item.quantity + delta) }
+  //         : item
+  //     )
+  //   );
+  // };
 
   const total = cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
 
   const whatsappMessage = encodeURIComponent(
-    `Hello KiddiesGrowth, I'd like to place an order:\n\n${cartItems
+    `Hello KiddiesGrowth, I'd like to place an order:\n\n${cart
       .map(
         (item) =>
           `•[ID: ${item.id}] ${item.name} x${item.quantity} - ₦${
@@ -69,7 +37,7 @@ export default function CartPage() {
       <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-6">
         <h2 className="text-3xl font-bold mb-6 text-center">Your Cart</h2>
 
-        {cartItems.length === 0 ? (
+        {cart.length === 0 ? (
           <p className="text-center text-gray-500">Your cart is empty.</p>
         ) : (
           <>
@@ -96,7 +64,7 @@ export default function CartPage() {
                     <div className="join">
                       <button
                         className="join-item btn btn-sm"
-                        onClick={() => increaseQuantity(item.id)}
+                        onClick={() => decreaseQuantity(item.id)}
                       >
                         -
                       </button>
@@ -105,7 +73,7 @@ export default function CartPage() {
                       </button>
                       <button
                         className="join-item btn btn-sm"
-                        onClick={() => decreaseQuantity(item.id)}
+                        onClick={() => increaseQuantity(item.id)}
                       >
                         +
                       </button>
