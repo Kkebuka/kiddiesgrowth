@@ -1,19 +1,14 @@
 import QuantitySelector from "../../components/cart/QuantitySelector.tsx";
 import ProductImageCarousel from "../../components/cart/ProductImageCarousel.tsx";
-// import { useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import OtherProducts from "./components/OtherProducts.js";
+import { products } from "../../data/products.ts";
 
 export default function ProductDetails() {
-  const product = {
-    id: 13,
-    src: ["https://via.placeholder.com/300x200?text=Robot+Toy"], // Make this an array for carousel compatibility
-    alt: "Robot Toy",
-    name: "Smart Talking Robot",
-    longDescription: "Interactive robot to educate and entertain.",
-    price: 6000,
-    option: "Add to Cart",
-    category: "Battery toys",
-  };
+  const { id } = useParams();
+  const product = products.find(
+    (product) => product.id.toString() === id?.toString()
+  );
 
   // const {id} = useParams()
   // This method involves both global and direct fetch if not showed
@@ -39,21 +34,21 @@ export default function ProductDetails() {
     <div className="p-4 w-full ">
       <div className="flex flex-col md:flex-row gap-6">
         {/* Carousel expects an array of images */}
-        <ProductImageCarousel images={product.src} />
+        <ProductImageCarousel images={[]} />
 
         <div className="card-body">
           <h2 className="card-title text-xl sm:text-2xl font-semibold">
-            {product.name}
+            {product?.name}
           </h2>
 
           <div className="card-actions justify-between lg:justify-start items-center mt-4">
             <span className="text-lg font-bold text-green-600">
-              ₦{product.price}
+              ₦{product?.price}
             </span>
             <QuantitySelector />
           </div>
           <h2 className="card-title  sm:text-xl  lg:text-base ">
-            Category: {product.category}
+            Category: {product?.category}
           </h2>
           <div className="flex  gap-4">
             <button className="btn btn-primary">Add to Cart</button>
@@ -70,7 +65,7 @@ export default function ProductDetails() {
           <h2 className="sm:text-lg font-medium lg:text-2xl ">Review</h2>
         </div>
 
-        <p className="text-gray-700 mt-2">{product.longDescription}</p>
+        <p className="text-gray-700 mt-2">{product?.description}</p>
       </div>
       <OtherProducts />
     </div>

@@ -1,8 +1,10 @@
 import { useParams } from "react-router-dom";
 import { products } from "../../data/products";
 import ProductCard from "../../components/ui/ProductCard";
+import { useCart } from "../../hooks/useCart";
 
 export default function CategoryProducts() {
+  const { addToCart } = useCart();
   const { categoryName } = useParams();
 
   const filtered = products.filter(

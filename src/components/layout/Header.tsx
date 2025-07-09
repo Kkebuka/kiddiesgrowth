@@ -3,8 +3,10 @@ import logo from "../../assets/images/kiddies-growth-no_BG.png";
 import { FaShoppingCart, FaUser } from "react-icons/fa";
 import { FaSearch } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
+import { useCart } from "../../hooks/useCart";
 
 function Header() {
+  const { cart } = useCart();
   return (
     <div className=" ">
       <div className="navbar  ">
@@ -89,8 +91,13 @@ function Header() {
           <a className="btn lg:hidden">
             <FaUser />
           </a>
-          <NavLink to="/cart" className="btn">
-            <FaShoppingCart />
+          <NavLink to="/cart" className="btn relative">
+            <FaShoppingCart className="text-xl" />
+            {cart.length > 0 && (
+              <span className="badge badge-sm bg-red-500 text-white absolute -top-1 -right-1">
+                {cart.length}
+              </span>
+            )}
           </NavLink>
         </div>
       </div>
