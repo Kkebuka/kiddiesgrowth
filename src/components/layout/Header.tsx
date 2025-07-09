@@ -94,7 +94,7 @@ function Header() {
           <NavLink to="/cart" className="btn relative">
             <FaShoppingCart className="text-xl" />
             {cart.length > 0 && (
-              <span className="badge badge-sm bg-red-500 text-white absolute -top-1 -right-1">
+              <span className="badge badge-xs bg-blue-500  text-white absolute -top-1 -right-1">
                 {cart.length}
               </span>
             )}
