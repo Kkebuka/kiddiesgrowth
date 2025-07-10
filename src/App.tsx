@@ -13,6 +13,7 @@ import AboutUsPage from "./pages/aboutUsPage/AboutUsPage";
 import { CartProvider } from "./contexts/CartContext";
 import CategoryProducts from "./pages/categories/CategoryProducts";
 import DashboardPage from "./admin/pages/dashoardPage.jsx/DashboardPage";
+import DashboardOverview from "./admin/pages/dashboardOverview/DashboardOverview";
 
 function App() {
   console.log(
@@ -36,8 +37,8 @@ function App() {
         </Route>
 
         <Route path="/admin" element={<DashboardPage />}>
-          {/* <Route index element={<Dashboard />} />
-          <Route path="products" element={<Products />} />
+          <Route index path="" element={<DashboardOverview />} />
+          {/* <Route path="products" element={<Products />} />
           <Route path="orders" element={<Orders />} /> */}
         </Route>
       </Routes>

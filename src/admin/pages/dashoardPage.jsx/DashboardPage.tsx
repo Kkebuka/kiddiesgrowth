@@ -12,13 +12,13 @@ import {
 
 export default function DashboardPage() {
   return (
-    <div className="flex min-h-screen bg-gray-50">
+    <div className="flex min-h-screen bg-gray-100">
       {/* Sidebar */}
-      <aside className="w-64 bg-primary text-white p-6 shadow-lg">
-        <h1 className="text-2xl font-bold mb-8 text-center">
+      <aside className="w-64 bg-white text-white p-6 shadow-lg">
+        <h1 className="text-2xl text-primary font-bold mb-8 text-center">
           KiddiesGrowth Admin
         </h1>
-        <nav className="flex flex-col gap-4">
+        <nav className="flex flex-col gap-4 text-gray-700">
           <NavLink
             to="/admin"
             end
