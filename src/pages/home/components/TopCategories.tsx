@@ -35,14 +35,15 @@ export default function TopCategories() {
       <h4 className="text-gray-800 font-semibold text-2xl py-2 text-center">
         Top Categories
       </h4>
-      <div className="w-full grid grid-cols-5 overflow-scroll gap-2 ">
+      <div className="sm:flex sm:overflow-x-auto gap-4 lg:grid lg:grid-cols-5 scrollbar-hide">
         {categories?.map((category, index) => (
-          <CategoryCard
-            image={category.image}
-            name={category.name}
-            productCount={category.productCount}
-            key={index}
-          />
+          <div key={index} className="min-w-[180px] shrink-0">
+            <CategoryCard
+              image={category.image}
+              name={category.name}
+              productCount={category.productCount}
+            />
+          </div>
         ))}
       </div>
     </div>
