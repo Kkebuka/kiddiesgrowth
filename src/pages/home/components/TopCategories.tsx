@@ -35,7 +35,7 @@ export default function TopCategories() {
       <h4 className="text-gray-800 font-semibold text-2xl py-2 text-center">
         Top Categories
       </h4>
-      <div className="w-full grid grid-cols-5 overflow-x-auto gap-2 whitespace-nowrap">
+      <div className="w-full grid grid-cols-5 overflow-scroll gap-2 ">
         {categories?.map((category, index) => (
           <CategoryCard
             image={category.image}
