@@ -7,7 +7,7 @@ import { Outlet } from "react-router-dom";
 export default function MainLayout() {
   return (
     <div data-theme="light" className=" scroll-smooth">
-      <div className="lg:px-12">
+      <div className="lg:px-12 pt-20">
         <Header />
         <Outlet />
       </div>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import logo from "../../assets/images/kiddies-growth-no_BG.png";
 import { FaShoppingCart, FaUser } from "react-icons/fa";
 import { FaSearch } from "react-icons/fa";
@@ -7,9 +7,32 @@ import { useCart } from "../../hooks/useCart";
 
 function Header() {
   const { cart } = useCart();
+
+  const [show, setShow] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  const controlNavbar = () => {
+    if (window.scrollY > lastScrollY) {
+      setShow(false); // Scrolling down
+    } else {
+      setShow(true); // Scrolling up
+    }
+    setLastScrollY(window.scrollY);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", controlNavbar);
+    return () => {
+      window.removeEventListener("scroll", controlNavbar);
+    };
+  }, [lastScrollY]);
   return (
     <div className=" ">
-      <div className="navbar  ">
+      <div
+        className={`navbar bg-base-100 px-12 left-0 shadow-md fixed top-0 w-full z-50 transform transition-transform duration-700 ease-in-out ${
+          show ? "translate-y-0" : "-translate-y-full"
+        }`}
+      >
         <div className="dropdown lg:hidden">
           <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
             <svg
@@ -40,7 +63,7 @@ function Header() {
         </div>
         <div className="navbar-start">
           <NavLink to="/" className="">
-            <img src={logo} alt="" className="w-20" />
+            <img src={logo} alt="" className="w-16" />
           </NavLink>
         </div>
         <div className="navbar-center hidden lg:flex">
