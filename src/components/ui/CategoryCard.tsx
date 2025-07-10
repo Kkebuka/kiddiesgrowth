@@ -8,7 +8,7 @@ export default function CategoryCard({
 }: CategoryProps) {
   return (
     <Link to={`/category/${name}`}>
-      <div className="card bg-base-100 shadow-md hover:shadow-lg transition-transform hover:-translate-y-1 duration-300">
+      <div className="card bg-base-100 shadow-md hover:shadow-lg transition-transform hover:-translate-y-1 duration-300 ">
         <figure className="px-4 pt-4">
           <img
             src={image}

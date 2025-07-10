@@ -31,13 +31,13 @@ export default function TopCategories() {
     },
   ];
   return (
-    <div className="shadow-md  sm:hidden lg:block">
+    <div className="shadow-md  lg:block">
       <h4 className="text-gray-800 font-semibold text-2xl py-2 text-center">
         Top Categories
       </h4>
-      <div className="sm:flex sm:overflow-x-auto gap-4 lg:grid lg:grid-cols-5 scrollbar-hide">
+      <div className="flex overflow-x-auto gap-4 scrollbar-hide">
         {categories?.map((category, index) => (
-          <div key={index} className="min-w-[180px] shrink-0">
+          <div key={index} className="min-w-[200px] flex-1 shrink-0">
             <CategoryCard
               image={category.image}
               name={category.name}
