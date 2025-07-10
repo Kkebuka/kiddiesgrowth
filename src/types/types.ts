@@ -18,6 +18,7 @@ export type ProductType = {
   category: string;
   name: string;
   description?: string;
+  offer?: number;
   price: number;
   option?: string;
 };
