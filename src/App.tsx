@@ -12,7 +12,7 @@ import AccountPage from "./pages/accountPage/AccountPage";
 import AboutUsPage from "./pages/aboutUsPage/AboutUsPage";
 import { CartProvider } from "./contexts/CartContext";
 import CategoryProducts from "./pages/categories/CategoryProducts";
-// import DashboardPage from "./admin/pages/dashoardPage.jsx/DashboardPage";
+import DashboardPage from "./admin/pages/dashoardPage.jsx/DashboardPage";
 
 function App() {
   console.log(
@@ -35,11 +35,11 @@ function App() {
           <Route path="category/:categoryName" element={<CategoryProducts />} />
         </Route>
 
-        {/* <Route path="" element={<DashboardPage />}>
-          <Route index element={<Dashboard />} />
+        <Route path="/admin" element={<DashboardPage />}>
+          {/* <Route index element={<Dashboard />} />
           <Route path="products" element={<Products />} />
-          <Route path="orders" element={<Orders />} />
-        </Route> */}
+          <Route path="orders" element={<Orders />} /> */}
+        </Route>
       </Routes>
     </CartProvider>
   );

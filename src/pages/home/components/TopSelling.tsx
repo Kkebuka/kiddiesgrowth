@@ -57,7 +57,7 @@ export default function TopSelling() {
         Top Products
       </h4>
 
-      <div className="  grid grid-cols-2 gap-3  grid-cols-5 ">
+      <div className="  grid grid-cols-2 gap-3  lg:grid-cols-4 ">
         {products.map((product) => (
           <Link to={`/shop/${product.id}`} key={product?.id}>
             <ProductCard {...product} key={product.id} />

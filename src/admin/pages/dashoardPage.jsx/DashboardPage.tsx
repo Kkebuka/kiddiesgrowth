@@ -1,67 +1,92 @@
-import { Outlet } from "react-router-dom";
-// import { LayoutDashboard, Package, ShoppingCart, Users } from "lucide-react";
+// src/pages/admin/AdminLayout.tsx
+import React from "react";
+import { Outlet, NavLink } from "react-router-dom";
+import {
+  FaBox,
+  FaPlus,
+  FaUsers,
+  FaClipboardList,
+  FaThLarge,
+  FaChartLine,
+} from "react-icons/fa";
 
 export default function DashboardPage() {
   return (
-    <div className="min-h-screen flex bg-gray-100">
+    <div className="flex min-h-screen bg-gray-50">
       {/* Sidebar */}
-      <aside className="w-64 hidden lg:block bg-white shadow-md">
-        <div className="p-6 border-b border-gray-200">
-          <h1 className="text-2xl font-bold text-gray-800">
-            KiddiesGrowth Admin
-          </h1>
-        </div>
-        <nav className="p-4 flex flex-col gap-2">
-          {/* <NavItem to="." icon={<LayoutDashboard size={20} />}>
-            Dashboard
-          </NavItem>
-          <NavItem to="products" icon={<Package size={20} />}>
-            Products
-          </NavItem>
-          <NavItem to="orders" icon={<ShoppingCart size={20} />}>
-            Orders
-          </NavItem>
-          <NavItem to="users" icon={<Users size={20} />}>
-            Users
-          </NavItem> */}
+      <aside className="w-64 bg-primary text-white p-6 shadow-lg">
+        <h1 className="text-2xl font-bold mb-8 text-center">
+          KiddiesGrowth Admin
+        </h1>
+        <nav className="flex flex-col gap-4">
+          <NavLink
+            to="/admin"
+            end
+            className={({ isActive }) =>
+              `flex items-center gap-3 p-3 rounded-lg transition hover:bg-primary-focus ${
+                isActive ? "bg-primary-focus" : ""
+              }`
+            }
+          >
+            <FaChartLine /> Dashboard
+          </NavLink>
+          <NavLink
+            to="/admin/orders"
+            className={({ isActive }) =>
+              `flex items-center gap-3 p-3 rounded-lg transition hover:bg-primary-focus ${
+                isActive ? "bg-primary-focus" : ""
+              }`
+            }
+          >
+            <FaClipboardList /> Orders
+          </NavLink>
+          <NavLink
+            to="/admin/add-product"
+            className={({ isActive }) =>
+              `flex items-center gap-3 p-3 rounded-lg transition hover:bg-primary-focus ${
+                isActive ? "bg-primary-focus" : ""
+              }`
+            }
+          >
+            <FaPlus /> Add Product
+          </NavLink>
+          <NavLink
+            to="/admin/categories"
+            className={({ isActive }) =>
+              `flex items-center gap-3 p-3 rounded-lg transition hover:bg-primary-focus ${
+                isActive ? "bg-primary-focus" : ""
+              }`
+            }
+          >
+            <FaThLarge /> Categories
+          </NavLink>
+          <NavLink
+            to="/admin/products"
+            className={({ isActive }) =>
+              `flex items-center gap-3 p-3 rounded-lg transition hover:bg-primary-focus ${
+                isActive ? "bg-primary-focus" : ""
+              }`
+            }
+          >
+            <FaBox /> Products
+          </NavLink>
+          <NavLink
+            to="/admin/users"
+            className={({ isActive }) =>
+              `flex items-center gap-3 p-3 rounded-lg transition hover:bg-primary-focus ${
+                isActive ? "bg-primary-focus" : ""
+              }`
+            }
+          >
+            <FaUsers /> Users
+          </NavLink>
         </nav>
       </aside>
 
-      {/* Main content */}
-      <main className="flex-1 p-6">
-        <div className="mb-6 border-b pb-3">
-          <h2 className="text-2xl font-semibold text-gray-800">Admin Panel</h2>
-          <p className="text-sm text-gray-500">
-            Manage your store efficiently.
-          </p>
-        </div>
+      {/* Main Content */}
+      <main className="flex-1 p-8">
         <Outlet />
       </main>
     </div>
   );
 }
-
-// function NavItem({
-//   to,
-//   icon,
-//   children,
-// }: {
-//   to: string;
-//   icon: React.ReactNode;
-//   children: React.ReactNode;
-// }) {
-//   return (
-//     <NavLink
-//       to={to}
-//       end
-//       className={({ isActive }) =>
-//         `flex items-center gap-3 p-3 rounded-md hover:bg-gray-100 transition ${
-//           isActive ? "bg-gray-200 font-semibold text-primary" : "text-gray-700"
-//         }`
-//       }
-//     >
-//       {icon}
-//       {children}
-//     </NavLink>
-//   );
-// }
