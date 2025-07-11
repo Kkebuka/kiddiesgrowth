@@ -14,6 +14,7 @@ import { CartProvider } from "./contexts/CartContext";
 import CategoryProducts from "./pages/categories/CategoryProducts";
 import DashboardPage from "./admin/pages/dashoardPage.jsx/DashboardPage";
 import DashboardOverview from "./admin/pages/dashboardOverview/DashboardOverview";
+import AddProduct from "./admin/pages/addProduct/AddProduct";
 
 function App() {
   console.log(
@@ -38,6 +39,8 @@ function App() {
 
         <Route path="/admin" element={<DashboardPage />}>
           <Route index path="" element={<DashboardOverview />} />
+          <Route index path="add-product" element={<AddProduct />} />
+
           {/* <Route path="products" element={<Products />} />
           <Route path="orders" element={<Orders />} /> */}
         </Route>

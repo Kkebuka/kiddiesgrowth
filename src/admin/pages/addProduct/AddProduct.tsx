@@ -6,6 +6,9 @@ const AddProduct = () => {
   const [imageFile, setImageFile] = useState<File | null>(null);
   const [uploading, setUploading] = useState(false);
 
+  const cloud_Name = import.meta.env.VITE_CLOUDINARY_CLOUD_NAME;
+  const upload_Preset = import.meta.env.VITE_CLOUDINARY_UPLOAD_PRESET;
+
   const handleChange = (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
@@ -27,10 +30,10 @@ const AddProduct = () => {
     setUploading(true);
     const formData = new FormData();
     formData.append("file", imageFile);
-    formData.append("upload_preset", "your_upload_preset"); // Replace with your own preset
+    formData.append("upload_preset", upload_Preset); // Replace with your own preset
 
     const res = await fetch(
-      "https://api.cloudinary.com/v1_1/your_cloud_name/image/upload",
+      `https://api.cloudinary.com/v1_1/${cloud_Name}/image/upload`,
       {
         method: "POST",
         body: formData,
@@ -65,48 +68,48 @@ const AddProduct = () => {
           name="name"
           type="text"
           placeholder="Product Name"
-          className="input"
+          className="input bg-gray-100 text-gray-800"
           onChange={handleChange}
         />
         <input
           name="category"
           type="text"
           placeholder="Category"
-          className="input"
+          className="input bg-gray-100 text-gray-800"
           onChange={handleChange}
         />
         <input
           name="price"
           type="number"
           placeholder="Price (₦)"
-          className="input"
+          className="input bg-gray-100 text-gray-800"
           onChange={handleChange}
         />
         <input
           name="offer"
           type="number"
           placeholder="Offer (%)"
-          className="input"
+          className="input bg-gray-100 text-gray-800"
           onChange={handleChange}
         />
         <input
           name="option"
           type="text"
           placeholder="Option (size/color)"
-          className="input"
+          className="input bg-gray-100 text-gray-800"
           onChange={handleChange}
         />
         <input
           name="description"
           placeholder="Description"
-          className="input col-span-2"
+          className="input bg-gray-100 text-gray-800"
           onChange={handleChange}
         />
         <input
           type="file"
           accept="image/*"
           onChange={handleImageChange}
-          className="col-span-2"
+          className=" input col-span-2 bg-gray-100 text-gray-800"
         />
 
         <button

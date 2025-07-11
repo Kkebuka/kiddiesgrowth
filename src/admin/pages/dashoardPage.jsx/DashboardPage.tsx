@@ -16,7 +16,7 @@ export default function DashboardPage() {
       {/* Sidebar */}
       <aside className="w-64 bg-white text-white p-6 shadow-lg">
         <h1 className="text-2xl text-primary font-bold mb-8 text-center">
-          KiddiesGrowth Admin
+          KiddiesGrowth
         </h1>
         <nav className="flex flex-col gap-4 text-gray-700">
           <NavLink

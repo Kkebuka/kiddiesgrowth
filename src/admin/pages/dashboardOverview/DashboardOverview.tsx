@@ -101,13 +101,17 @@ const DashboardOverview = () => {
       {/* Charts Section */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <div className="bg-white rounded-lg p-4 shadow border">
-          <p className="text-lg font-semibold mb-2">Sales by Month</p>
+          <p className="text-lg font-semibold text-orange-500 mb-2">
+            Sales by Month
+          </p>
           <div className="w-full h-56 bg-gray-100 rounded flex items-center justify-center text-gray-400">
             <Bar data={salesByMonthData} />
           </div>
         </div>
         <div className="bg-white rounded-lg p-4 shadow border">
-          <p className="text-lg font-semibold mb-2">Orders Trend</p>
+          <p className="text-lg font-semibold text-orange-500 mb-2">
+            Orders Trend
+          </p>
           <div className="w-full h-56 bg-gray-100 rounded flex items-center justify-center text-gray-400">
             <Line data={ordersTrendData} />
           </div>
@@ -117,7 +121,9 @@ const DashboardOverview = () => {
       {/* Top Products + Recent Orders */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <div className="bg-white rounded-lg p-4 shadow border">
-          <p className="text-lg font-semibold mb-4">Top Selling Products</p>
+          <p className="text-lg font-semibold text-orange-500 mb-4">
+            Top Selling Products
+          </p>
           <ul className="space-y-3">
             {topProducts.map((product, i) => (
               <li
@@ -131,7 +137,9 @@ const DashboardOverview = () => {
           </ul>
         </div>
         <div className="bg-white rounded-lg p-4 shadow border">
-          <p className="text-lg font-semibold mb-4">Recent Orders</p>
+          <p className="text-lg font-semibold text-orange-500 mb-4">
+            Recent Orders
+          </p>
           <table className="w-full text-sm">
             <thead>
               <tr className="text-left text-gray-500 border-b">
