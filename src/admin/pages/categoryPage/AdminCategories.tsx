@@ -1,10 +1,29 @@
 import React, { useState } from "react";
 import { FiEdit2, FiTrash2, FiPlus } from "react-icons/fi";
 
-const initialCategories = [
-  { id: 1, name: "Toys", productCount: 8 },
-  { id: 2, name: "Books", productCount: 5 },
-  { id: 3, name: "Clothing", productCount: 12 },
+const cloud_Name = "your_cloud_name"; // 🔁 Replace with your Cloudinary cloud name
+const upload_Preset = "your_upload_preset"; // 🔁 Replace with your upload preset
+
+type CategoryType = {
+  id: number;
+  name: string;
+  image: string;
+  productCount: number;
+};
+
+const initialCategories: CategoryType[] = [
+  {
+    id: 1,
+    name: "Toys",
+    image: "https://via.placeholder.com/80",
+    productCount: 8,
+  },
+  {
+    id: 2,
+    name: "Books",
+    image: "https://via.placeholder.com/80",
+    productCount: 5,
+  },
 ];
 
 const AdminCategories = () => {
@@ -12,13 +31,40 @@ const AdminCategories = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [newCategory, setNewCategory] = useState("");
   const [showAddForm, setShowAddForm] = useState(false);
+  const [imageFile, setImageFile] = useState<File | null>(null);
+  const [imageUrl, setImageUrl] = useState("");
+  const [uploading, setUploading] = useState(false);
 
-  const filtered = categories.filter((cat) =>
-    cat.name.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  // 🖼 Handle file change
+  const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files) setImageFile(e.target.files[0]);
+  };
 
+  // ☁ Upload to Cloudinary
+  const uploadToCloudinary = async () => {
+    if (!imageFile) return;
+    setUploading(true);
+    const formData = new FormData();
+    formData.append("file", imageFile);
+    formData.append("upload_preset", upload_Preset);
+
+    const res = await fetch(
+      `https://api.cloudinary.com/v1_1/${cloud_Name}/image/upload`,
+      {
+        method: "POST",
+        body: formData,
+      }
+    );
+
+    const data = await res.json();
+    setImageUrl(data?.secure_url);
+    setUploading(false);
+  };
+
+  // ➕ Add category to list
   const handleAddCategory = () => {
-    if (!newCategory.trim()) return;
+    if (!newCategory.trim() || !imageUrl) return;
+
     const exists = categories.find(
       (cat) => cat.name.toLowerCase() === newCategory.toLowerCase()
     );
@@ -27,13 +73,20 @@ const AdminCategories = () => {
     const newCat = {
       id: categories.length + 1,
       name: newCategory,
+      image: imageUrl,
       productCount: 0,
     };
 
     setCategories([newCat, ...categories]);
     setNewCategory("");
+    setImageUrl("");
+    setImageFile(null);
     setShowAddForm(false);
   };
+
+  const filtered = categories.filter((cat) =>
+    cat.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
   return (
     <div className="p-6 bg-gray-100 min-h-screen">
@@ -48,7 +101,7 @@ const AdminCategories = () => {
         </button>
       </div>
 
-      {/* Search Bar */}
+      {/* Search */}
       <div className="mb-4">
         <input
           type="text"
@@ -61,30 +114,52 @@ const AdminCategories = () => {
 
       {/* Add Category Form */}
       {showAddForm && (
-        <div className="mb-4 bg-white p-4 rounded shadow-md w-full sm:w-1/2">
+        <div className="mb-6 bg-white p-4 rounded shadow-md w-full sm:w-1/2 space-y-3">
           <input
             type="text"
-            placeholder="New category name"
+            placeholder="Category name"
             value={newCategory}
             onChange={(e) => setNewCategory(e.target.value)}
             className="border border-gray-300 px-4 py-2 rounded w-full text-sm"
           />
+          <input
+            type="file"
+            accept="image/*"
+            onChange={handleImageChange}
+            className="w-full border text-gray-700 px-3 py-2 rounded text-sm"
+          />
+          <button
+            onClick={uploadToCloudinary}
+            disabled={uploading}
+            className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded text-sm"
+          >
+            {uploading ? "Uploading..." : "Upload Image"}
+          </button>
+
+          {imageUrl && (
+            <img
+              src={imageUrl}
+              alt="Uploaded preview"
+              className="h-20 rounded object-cover"
+            />
+          )}
+
           <button
             onClick={handleAddCategory}
-            className="mt-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded text-sm"
+            className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded text-sm"
           >
             Save Category
           </button>
         </div>
       )}
 
-      {/* Table */}
+      {/* Category Table */}
       <div className="overflow-x-auto bg-white rounded shadow-md">
         <table className="min-w-full text-sm text-left">
           <thead className="bg-gray-200 text-gray-700 uppercase text-xs">
             <tr>
-              <th className="py-3 px-4">ID</th>
-              <th className="py-3 px-4">Category Name</th>
+              <th className="py-3 px-4">Image</th>
+              <th className="py-3 px-4">Name</th>
               <th className="py-3 px-4">Products</th>
               <th className="py-3 px-4 text-center">Actions</th>
             </tr>
@@ -99,7 +174,13 @@ const AdminCategories = () => {
             ) : (
               filtered.map((cat) => (
                 <tr key={cat.id} className="border-t hover:bg-gray-50">
-                  <td className="py-2 px-4">{cat.id}</td>
+                  <td className="py-2 px-4">
+                    <img
+                      src={cat.image}
+                      alt={cat.name}
+                      className="w-12 h-12 rounded object-cover"
+                    />
+                  </td>
                   <td className="py-2 px-4 font-medium text-gray-800">
                     {cat.name}
                   </td>
