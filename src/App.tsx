@@ -15,7 +15,8 @@ import CategoryProducts from "./pages/categories/CategoryProducts";
 import DashboardPage from "./admin/pages/dashoardPage.jsx/DashboardPage";
 import DashboardOverview from "./admin/pages/dashboardOverview/DashboardOverview";
 import AddProduct from "./admin/pages/addProduct/AddProduct";
-import ProductsPage from "./admin/pages/productsPage/ProductsPage";
+import ProductsPage from "./admin/pages/productsPage/AdminProducts";
+import AdminCategories from "./admin/pages/categoryPage/AdminCategories";
 
 function App() {
   console.log(
@@ -43,6 +44,7 @@ function App() {
           <Route index path="add-product" element={<AddProduct />} />
 
           <Route path="products" element={<ProductsPage />} />
+          <Route path="categories" element={<AdminCategories />} />
           {/* <Route path="orders" element={<Orders />} /> */}
         </Route>
       </Routes>

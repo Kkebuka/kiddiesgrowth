@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import type { ProductType } from "../../../types/types";
 import { products } from "../../../data/products";
 import { FiEdit2, FiTrash2 } from "react-icons/fi";
+import { Link } from "react-router-dom";
 
 const AdminProducts = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -23,22 +24,24 @@ const AdminProducts = () => {
       {/* Header Section */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
         <h2 className="text-2xl font-semibold text-gray-800">Products</h2>
-        <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded shadow">
-          + Add Product
-        </button>
+        <Link to="/admin/add-product">
+          <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 cursor-pointer py-2 rounded shadow">
+            + Add Product
+          </button>
+        </Link>
       </div>
 
       {/* Filters Section */}
-      <div className="flex flex-col md:flex-row items-start md:items-center gap-4 mb-4">
+      <div className="flex flex-col md:flex-row items-start lg:justify-between md:items-center gap-4 mb-4">
         <input
           type="text"
           placeholder="Search by name or category..."
-          className="w-full md:w-1/2 border border-gray-300 px-4 py-2 rounded text-sm"
+          className="w-full md:w-1/2 border border-gray-300 bg-gray-50 px-4 py-2 text-gray-700 rounded text-sm"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
         <select
-          className="w-full md:w-1/4 border border-gray-300 px-3 py-2 rounded text-sm"
+          className="w-full md:w-1/4 border border-gray-300 px-3 bg-gray-50 text-gray-700  py-2 rounded text-sm"
           value={categoryFilter}
           onChange={(e) => setCategoryFilter(e.target.value)}
         >
