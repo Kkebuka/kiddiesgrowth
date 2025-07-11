@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import type { ProductType } from "../../../types/types"; // Adjust based on path
 
 const AddProduct = () => {
@@ -41,8 +41,9 @@ const AddProduct = () => {
     );
 
     const data = await res.json();
-    setProduct((prev) => ({ ...prev, src: data.secure_url }));
+    setProduct((prev) => ({ ...prev, src: data?.secure_url }));
     setUploading(false);
+    console.log(product);
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -57,6 +58,9 @@ const AddProduct = () => {
     alert("Product ready — copy console output and paste into products.ts");
   };
 
+  useEffect(() => {
+    console.log(product);
+  }, [product]);
   return (
     <div className="max-w-3xl mx-auto p-6 bg-white rounded shadow-md space-y-6">
       <h2 className="text-xl font-bold text-gray-700">Add New Product</h2>

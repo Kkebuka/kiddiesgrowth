@@ -41,16 +41,6 @@ export default function DashboardPage() {
             <FaPlus /> Add Product
           </NavLink>
           <NavLink
-            to="/admin/categories"
-            className={({ isActive }) =>
-              `flex items-center gap-3 p-3 rounded-lg transition hover:bg-primary-focus ${
-                isActive ? "bg-primary-focus" : ""
-              }`
-            }
-          >
-            <FaThLarge /> Categories
-          </NavLink>
-          <NavLink
             to="/admin/products"
             className={({ isActive }) =>
               `flex items-center gap-3 p-3 rounded-lg transition hover:bg-primary-focus ${
@@ -60,6 +50,17 @@ export default function DashboardPage() {
           >
             <FaBox /> Products
           </NavLink>
+          <NavLink
+            to="/admin/categories"
+            className={({ isActive }) =>
+              `flex items-center gap-3 p-3 rounded-lg transition hover:bg-primary-focus ${
+                isActive ? "bg-primary-focus" : ""
+              }`
+            }
+          >
+            <FaThLarge /> Categories
+          </NavLink>
+
           <NavLink
             to="/admin/orders"
             className={({ isActive }) =>
