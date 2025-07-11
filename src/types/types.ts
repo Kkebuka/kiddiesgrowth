@@ -26,3 +26,11 @@ export type ProductType = {
 export type CartItemType = ProductType & {
   quantity: number;
 };
+
+export type OrderType = {
+  id: string;
+  customer: string;
+  date: string;
+  total: number;
+  status: "pending" | "shipped" | "delivered" | "cancelled";
+};
