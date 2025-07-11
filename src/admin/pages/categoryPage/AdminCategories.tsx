@@ -113,45 +113,6 @@ const AdminCategories = () => {
       </div>
 
       {/* Add Category Form */}
-      {showAddForm && (
-        <div className="mb-6 bg-white p-4 rounded shadow-md w-full sm:w-1/2 space-y-3">
-          <input
-            type="text"
-            placeholder="Category name"
-            value={newCategory}
-            onChange={(e) => setNewCategory(e.target.value)}
-            className="border border-gray-300 px-4 py-2 rounded w-full text-sm"
-          />
-          <input
-            type="file"
-            accept="image/*"
-            onChange={handleImageChange}
-            className="w-full border text-gray-700 px-3 py-2 rounded text-sm"
-          />
-          <button
-            onClick={uploadToCloudinary}
-            disabled={uploading}
-            className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded text-sm"
-          >
-            {uploading ? "Uploading..." : "Upload Image"}
-          </button>
-
-          {imageUrl && (
-            <img
-              src={imageUrl}
-              alt="Uploaded preview"
-              className="h-20 rounded object-cover"
-            />
-          )}
-
-          <button
-            onClick={handleAddCategory}
-            className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded text-sm"
-          >
-            Save Category
-          </button>
-        </div>
-      )}
 
       {/* Category Table */}
       <div className="overflow-x-auto bg-white rounded shadow-md">
@@ -201,6 +162,47 @@ const AdminCategories = () => {
           </tbody>
         </table>
       </div>
+      {showAddForm && (
+        <div className="fixed inset-0 flex items-center justify-center  bg-black bg-opacity-50">
+          <div className="bg-white rounded-lg p-6 h-4/6  ">
+            <input
+              type="text"
+              placeholder="Category name"
+              value={newCategory}
+              onChange={(e) => setNewCategory(e.target.value)}
+              className="border border-gray-300 px-4 py-2 rounded w-full text-sm"
+            />
+            <input
+              type="file"
+              accept="image/*"
+              onChange={handleImageChange}
+              className="w-full border text-gray-700 px-3 py-2 rounded text-sm"
+            />
+            <button
+              onClick={uploadToCloudinary}
+              disabled={uploading}
+              className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded text-sm"
+            >
+              {uploading ? "Uploading..." : "Upload Image"}
+            </button>
+
+            {imageUrl && (
+              <img
+                src={imageUrl}
+                alt="Uploaded preview"
+                className="h-20 rounded object-cover"
+              />
+            )}
+
+            <button
+              onClick={handleAddCategory}
+              className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded text-sm"
+            >
+              Save Category
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

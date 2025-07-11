@@ -60,7 +60,7 @@ const Orders = () => {
         <input
           type="text"
           placeholder="Search by customer or order ID"
-          className="w-full sm:w-1/2 border border-gray-300 px-4 py-2 rounded text-sm"
+          className="w-full sm:w-1/2 border border-gray-300 bg-gray-50 text-gray-800 px-4 py-2 rounded text-sm"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
