@@ -34,3 +34,10 @@ export type OrderType = {
   total: number;
   status: "pending" | "shipped" | "delivered" | "cancelled";
 };
+
+export type UserType = {
+  id: number;
+  username: string;
+  email: string;
+  createdAt: string; // ISO format
+};

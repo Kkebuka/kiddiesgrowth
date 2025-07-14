@@ -44,7 +44,6 @@ function App() {
         <Route path="/admin" element={<DashboardPage />}>
           <Route index path="" element={<DashboardOverview />} />
           <Route index path="add-product" element={<AddProduct />} />
-
           <Route path="products" element={<ProductsPage />} />
           <Route path="categories" element={<AdminCategories />} />
           <Route path="orders" element={<Orders />} />
