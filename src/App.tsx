@@ -18,6 +18,7 @@ import AddProduct from "./admin/pages/addProduct/AddProduct";
 import ProductsPage from "./admin/pages/productsPage/AdminProducts";
 import AdminCategories from "./admin/pages/categoryPage/AdminCategories";
 import Orders from "./admin/pages/orders/Orders";
+import UsersPage from "./admin/pages/usersPage/UsersPage";
 
 function App() {
   console.log(
@@ -47,6 +48,7 @@ function App() {
           <Route path="products" element={<ProductsPage />} />
           <Route path="categories" element={<AdminCategories />} />
           <Route path="orders" element={<Orders />} />
+          <Route path="users" element={<UsersPage />} />
         </Route>
       </Routes>
     </CartProvider>

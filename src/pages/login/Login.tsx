@@ -31,15 +31,15 @@ export default function Login() {
             <label className="label">
               <span className="label-text">Password</span>
             </label>
-            <div className="flex items-center ">
+            <div className="flex items-center w-full input input-bordered ">
               <input
                 type={showPassword ? "text" : "password"}
                 placeholder="••••••••"
-                className="input input-bordered pr-10 w-full"
+                className=" pr-10 w-full"
                 required
               />
               <span
-                className=" cursor-pointer text-gray-500 bg-gray-200 p-3"
+                className=" cursor-pointer text-gray-500 bg-gray-100 p-1"
                 onClick={() => setShowPassword((prev) => !prev)}
               >
                 {showPassword ? <FaEyeSlash /> : <FaEye />}

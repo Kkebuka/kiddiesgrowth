@@ -13,53 +13,53 @@ export default function Register() {
         </h2>
 
         <form className="flex flex-col gap-4">
-          {/* Username Field */}
-          <div className="form-control">
+          {/* Email Field */}
+          <div className="form-control flex flex-col">
             <label className="label">
               <span className="label-text">Username</span>
             </label>
             <input
-              type="text"
-              placeholder="yourusername"
-              className="input input-bordered"
+              type="name"
+              placeholder="Username"
+              className="input input-bordered w-full"
               required
             />
           </div>
-
-          {/* Email Field */}
-          <div className="form-control">
+          <div className="form-control flex flex-col">
             <label className="label">
               <span className="label-text">Email Address</span>
             </label>
             <input
               type="email"
               placeholder="you@example.com"
-              className="input input-bordered"
+              className="input input-bordered w-full"
               required
             />
           </div>
 
-          {/* Password Field with Eye Toggle */}
-          <div className="form-control relative">
+          {/* Password Field with Toggle */}
+          <div className="form-control flex flex-col">
             <label className="label">
               <span className="label-text">Password</span>
             </label>
-            <input
-              type={showPassword ? "text" : "password"}
-              placeholder="••••••••"
-              className="input input-bordered pr-10"
-              required
-            />
-            <span
-              className="absolute right-3 top-[42px] cursor-pointer text-gray-500"
-              onClick={() => setShowPassword((prev) => !prev)}
-            >
-              {showPassword ? <FaEyeSlash /> : <FaEye />}
-            </span>
+            <div className="flex w-full input input-bordered ">
+              <input
+                type={showPassword ? "text" : "password"}
+                placeholder="••••••••"
+                className=" pr-10 w-full"
+                required
+              />
+              <span
+                className=" cursor-pointer text-gray-500 bg-gray-100 p-1"
+                onClick={() => setShowPassword((prev) => !prev)}
+              >
+                {showPassword ? <FaEyeSlash /> : <FaEye />}
+              </span>
+            </div>
           </div>
 
           {/* Submit Button */}
-          <button className="btn btn-primary w-full mt-4">Sign Up</button>
+          <button className="btn btn-primary w-full mt-4">Register</button>
         </form>
 
         {/* Footer */}
