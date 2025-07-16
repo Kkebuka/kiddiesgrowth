@@ -4,12 +4,14 @@ import { FaShoppingCart, FaUser } from "react-icons/fa";
 import { FaSearch } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 import { useCart } from "../../hooks/useCart";
+import MobileMenu from "./MobieMenu";
 
 function Header() {
   const { cart } = useCart();
 
   const [show, setShow] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   const controlNavbar = () => {
     if (window.scrollY > lastScrollY) {
@@ -29,38 +31,11 @@ function Header() {
   return (
     <div className=" ">
       <div
-        className={`navbar bg-base-100 px-12 left-0 shadow-md fixed top-0 w-full z-50 transform transition-transform duration-700 ease-in-out ${
+        className={`navbar bg-base-100 px-4 lg:px-12 left-0 shadow-md fixed top-0 w-full z-50 transform transition-transform duration-700 ease-in-out ${
           show ? "translate-y-0" : "-translate-y-full"
         }`}
       >
-        <div className="dropdown lg:hidden">
-          <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              {" "}
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M4 6h16M4 12h16M4 18h7"
-              />{" "}
-            </svg>
-          </div>
-          <ul
-            tabIndex={0}
-            className="menu menu-sm dropdown-content bg-base-100 p-4 "
-          >
-            <NavLink to="/">Home</NavLink>
-            <NavLink to="/shop">Shop</NavLink>
-            <NavLink to="/category">Category</NavLink>
-            <NavLink to="/about">About Us</NavLink>
-          </ul>
-        </div>
+        <MobileMenu />
         <div className="navbar-start">
           <NavLink to="/" className="">
             <img src={logo} alt="" className="w-16" />
@@ -110,12 +85,15 @@ function Header() {
             </NavLink>
           </ul>
         </div>
-        <div className="navbar-end">
-          <a className="btn lg:hidden">
-            <FaUser />
-          </a>
-          <NavLink to="/cart" className="btn relative">
-            <FaShoppingCart className="text-xl" />
+        <div className="navbar-end space-x-3 ">
+          <NavLink
+            to={isAuthenticated ? "/account" : "/login"}
+            className="btn p-3 relative"
+          >
+            <FaUser className="text-sm lg:text-xl" />
+          </NavLink>
+          <NavLink to="/cart" className="btn p-3 relative">
+            <FaShoppingCart className="text-lg lg:text-xl" />
             {cart.length > 0 && (
               <span className="badge badge-xs bg-blue-500  text-white absolute -top-1 -right-1">
                 {cart.length}

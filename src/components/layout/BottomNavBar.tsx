@@ -1,10 +1,5 @@
 // BottomNavBar.tsx
-import {
-  FaHome,
-  FaCaretSquareLeft,
-  FaShoppingCart,
-  FaUser,
-} from "react-icons/fa";
+import { FaHome, FaLayerGroup, FaShoppingCart, FaUser } from "react-icons/fa";
 // import { Link } from "react-router-dom";
 
 const BottomNavBar = () => {
@@ -14,7 +9,7 @@ const BottomNavBar = () => {
     { name: "Home", icon: <FaHome size={20} />, to: "/" },
     {
       name: "Categories",
-      icon: <FaCaretSquareLeft size={20} />,
+      icon: <FaLayerGroup size={20} />,
       to: "/category",
     },
     { name: "Cart", icon: <FaShoppingCart size={20} />, to: "/cart" },

@@ -4,7 +4,7 @@ import { FaWhatsapp, FaPhoneAlt } from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <div>
+    <div className="pb-8 lg:pb-0">
       <footer className="footer lg:justify-around sm:footer-horizontal bg-base-300 text-base-content p-10 ">
         <nav>
           <h6 className="footer-title">Company</h6>

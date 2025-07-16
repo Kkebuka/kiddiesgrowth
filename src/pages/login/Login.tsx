@@ -6,7 +6,7 @@ export default function Login() {
   const [showPassword, setShowPassword] = useState(false);
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-4">
+    <div className=" flex items-center h-[calc(100vh-5rem)]  justify-center ">
       <div className="card w-full max-w-md bg-white shadow-xl p-6">
         <h2 className="text-2xl font-bold text-center mb-6 text-primary">
           Login
@@ -60,7 +60,6 @@ export default function Login() {
           <button className="btn btn-primary w-full mt-4">Login</button>
         </form>
 
-        {/* Footer */}
         <div className="text-center mt-6">
           <p className="text-sm text-gray-500">
             Don’t have an account?

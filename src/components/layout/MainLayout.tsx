@@ -1,18 +1,25 @@
-import React from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 import BottomNavBar from "./BottomNavBar";
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 
 export default function MainLayout() {
+  const location = useLocation();
+
+  const hideFooterRoute = ["/login", "/register", "/cart"];
+  const shouldHideFooter = hideFooterRoute.includes(location.pathname);
   return (
     <div data-theme="light" className=" scroll-smooth">
       <div className="lg:px-12 pt-20">
         <Header />
         <Outlet />
       </div>
-      <Footer />
-      <BottomNavBar />
+
+      {!shouldHideFooter && (
+        <>
+          <Footer /> <BottomNavBar />
+        </>
+      )}
     </div>
   );
 }

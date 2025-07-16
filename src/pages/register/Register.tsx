@@ -6,7 +6,7 @@ export default function Register() {
   const [showPassword, setShowPassword] = useState(false);
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-base-200 p-4">
+    <div className="h-[calc(100vh-5rem)] flex items-center justify-center bg-base-200 p-4">
       <div className="card w-full max-w-md bg-white shadow-xl p-6">
         <h2 className="text-2xl font-bold text-center mb-6 text-primary">
           Create an Account
@@ -50,7 +50,7 @@ export default function Register() {
                 required
               />
               <span
-                className=" cursor-pointer text-gray-500 bg-gray-100 p-1"
+                className=" cursor-pointer text-gray-500 bg-gray-100 p-1 "
                 onClick={() => setShowPassword((prev) => !prev)}
               >
                 {showPassword ? <FaEyeSlash /> : <FaEye />}

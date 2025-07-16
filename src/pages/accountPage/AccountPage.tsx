@@ -1,4 +1,5 @@
 import React from "react";
+import accountImg from "../../assets/images/Login.jpg";
 
 type User = {
   username: string;
@@ -12,8 +13,8 @@ const dummyUser: User = {
 
 export default function AccountPage() {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-base-200 px-4">
-      <div className="bg-white rounded-xl shadow-md w-full max-w-md p-6 space-y-6">
+    <div className="h-[calc(100vh-4rem)] flex lg:-mt-16   ">
+      <div className="bg-white  w-full lg:py-24 max-w-md p-6 space-y-6">
         {/* Avatar & Username */}
         <div className="flex flex-col items-center text-center">
           <div className="avatar mb-3">
@@ -53,6 +54,9 @@ export default function AccountPage() {
           <button className="btn btn-outline btn-sm">Edit Profile</button>
           <button className="btn btn-error btn-sm text-white">Logout</button>
         </div>
+      </div>
+      <div className=" hidden lg:block">
+        <img src={accountImg} alt="account-img" />
       </div>
     </div>
   );
