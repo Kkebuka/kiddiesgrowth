@@ -5,17 +5,6 @@ import { useCart } from "../../hooks/useCart";
 export default function CartPage() {
   const { cart, removeFromCart, increaseQuantity, decreaseQuantity } =
     useCart();
-  // const [cartItems, setCartItems] = React.useState<CartItem[]>(dummyCart);
-
-  // const updateQuantity = (id: number, delta: number) => {
-  //   setCartItems((prev) =>
-  //     prev.map((item) =>
-  //       item.id === id
-  //         ? { ...item, quantity: Math.max(1, item.quantity + delta) }
-  //         : item
-  //     )
-  //   );
-  // };
 
   const total = cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
 

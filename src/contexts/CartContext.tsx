@@ -19,15 +19,19 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
   const [cart, setCart] = useState<CartItemType[]>([]);
+  const [initialized, setInitialized] = useState(false);
 
   useEffect(() => {
     const storedCart = loadCart();
     setCart(storedCart);
+    setInitialized(true);
   }, []);
 
   useEffect(() => {
-    saveCart(cart);
-  }, [cart]);
+    if (initialized) {
+      saveCart(cart); // ✅ Will only run after first load is complete
+    }
+  }, [cart, initialized]);
 
   const addToCart = (product: ProductType) => {
     setCart((prev) => {
