@@ -9,12 +9,13 @@ import {
   FaThLarge,
   FaChartLine,
 } from "react-icons/fa";
+import AdminHeader from "../../../components/layout/AdminHeader";
 
 export default function DashboardPage() {
   return (
     <div className="flex min-h-screen bg-gray-100">
       {/* Sidebar */}
-      <aside className="w-64 bg-white text-white p-6 shadow-lg">
+      <aside className="w-64 bg-white text-white p-6 shadow-lg overflow-y-clip">
         <h1 className="text-2xl text-primary font-bold mb-8 text-center">
           KiddiesGrowth
         </h1>
@@ -86,8 +87,11 @@ export default function DashboardPage() {
       </aside>
 
       {/* Main Content */}
-      <main className="flex-1 p-8">
-        <Outlet />
+      <main className="flex-1">
+        <AdminHeader />
+        <div className=" p-8">
+          <Outlet />
+        </div>
       </main>
     </div>
   );
