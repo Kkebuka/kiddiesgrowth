@@ -13,9 +13,9 @@ import AdminHeader from "../../../components/layout/AdminHeader";
 
 export default function DashboardPage() {
   return (
-    <div className="flex min-h-screen bg-gray-100">
+    <div className="flex h-screen overflow-y-hidden w-screen bg-gray-100">
       {/* Sidebar */}
-      <aside className="w-64 bg-white text-white p-6 shadow-lg overflow-y-clip">
+      <aside className="w-64 bg-white text-white p-6 shadow-lg overflow-y-hidden">
         <h1 className="text-2xl text-primary font-bold mb-8 text-center">
           KiddiesGrowth
         </h1>
@@ -89,7 +89,7 @@ export default function DashboardPage() {
       {/* Main Content */}
       <main className="flex-1">
         <AdminHeader />
-        <div className=" p-8">
+        <div className=" p-8 h-[calc(100vh-4rem)] overflow-y-auto ">
           <Outlet />
         </div>
       </main>
