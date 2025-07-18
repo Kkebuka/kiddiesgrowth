@@ -1,42 +1,15 @@
-import React from "react";
 import CategoryCard from "../../../components/ui/CategoryCard";
-import { type CategoryProps } from "../../../types/types";
+import { categories } from "../../../data/categories";
 
 export default function TopCategories() {
-  const categories: CategoryProps[] = [
-    {
-      name: "Electronics",
-      image: "https://images.unsplash.com/photo-1550009158-9ebf69173e03",
-      productCount: 125,
-    },
-    {
-      name: "Clothing",
-      image: "https://images.unsplash.com/photo-1489987707025-afc232f7ea0f",
-      productCount: 89,
-    },
-    {
-      name: "Home & Garden",
-      image: "https://images.unsplash.com/photo-1583845112203-454c6c0c1c1f",
-      productCount: 76,
-    },
-    {
-      name: "Books",
-      image: "https://images.unsplash.com/photo-1544947950-fa07a98d237f",
-      productCount: 215,
-    },
-    {
-      name: "Sports",
-      image: "https://images.unsplash.com/photo-1574629810360-7efbbe195018",
-      productCount: 42,
-    },
-  ];
+  const topFive = categories.slice(0, 5);
   return (
     <div className="shadow-md  lg:block">
       <h4 className="text-gray-800 font-semibold text-2xl py-2 text-center">
         Top Categories
       </h4>
       <div className="flex overflow-x-auto gap-4 scrollbar-hide">
-        {categories?.map((category, index) => (
+        {topFive?.map((category, index) => (
           <div key={index} className="min-w-[200px] flex-1 shrink-0">
             <CategoryCard
               image={category.image}
