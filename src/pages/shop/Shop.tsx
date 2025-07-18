@@ -17,7 +17,11 @@ export default function Products() {
       </div>
       <div className="  w-full grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-4 auto-rows-fr">
         {products.map((product) => (
-          <ProductCard {...product} key={product.id} onAddToCart={addToCart} />
+          <ProductCard
+            {...product}
+            key={product.id}
+            onAddToCart={() => addToCart(product, 1)}
+          />
         ))}
       </div>
       <div className="flex justify-center">

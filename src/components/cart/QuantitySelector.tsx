@@ -1,4 +1,12 @@
-export default function QuantitySelector({ setQuantity, quantity }) {
+type QuantitySelectorProps = {
+  setQuantity: React.Dispatch<React.SetStateAction<number>>;
+  quantity: number;
+};
+
+export default function QuantitySelector({
+  setQuantity,
+  quantity,
+}: QuantitySelectorProps) {
   const increase = () => setQuantity((q) => q + 1);
   const decrease = () => setQuantity((q) => (q > 1 ? q - 1 : 1));
 
@@ -8,6 +16,7 @@ export default function QuantitySelector({ setQuantity, quantity }) {
         -
       </button>
       <input
+        name="quantity"
         type="number"
         value={quantity}
         readOnly

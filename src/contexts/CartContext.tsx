@@ -4,7 +4,7 @@ import { loadCart, saveCart } from "../utils/storage";
 
 type CartContextType = {
   cart: CartItemType[];
-  addToCart: (product: ProductType) => void;
+  addToCart: (product: ProductType, quantity: number) => void;
   removeFromCart: (id: number) => void;
   increaseQuantity: (id: number) => void;
   decreaseQuantity: (id: number) => void;
@@ -33,7 +33,7 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({
     }
   }, [cart, initialized]);
 
-  const addToCart = (product: ProductType) => {
+  const addToCart = (product: ProductType, quantity: number) => {
     setCart((prev) => {
       const existing = prev.find((item) => item.id === product.id);
       if (existing) {
@@ -44,7 +44,7 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({
         );
       }
       console.log(prev);
-      return [...prev, { ...product, quantity: product.quantity || 1 }];
+      return [...prev, { ...product, quantity: quantity }];
     });
   };
 

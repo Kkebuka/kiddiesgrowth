@@ -35,6 +35,7 @@ export default function ProductDetails() {
   // }, [id, products]);
 
   // if (loading) return <div className="p-6">Loading...</div>;
+
   if (!product)
     return <div className="p-6 text-red-500">Product not found.</div>;
 
@@ -60,7 +61,9 @@ export default function ProductDetails() {
           </h2>
           <div className="flex  ">
             <button
-              onClick={() => addToCart(product)}
+              onClick={() => {
+                if (product) addToCart(product, quantity);
+              }}
               className="btn btn-primary w-full"
             >
               Add to Cart
