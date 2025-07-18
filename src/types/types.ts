@@ -14,7 +14,7 @@ export type CategoryProps = {
 
 export type ProductType = {
   id: number;
-  src: string;
+  src: string[];
   category: string;
   name: string;
   description?: string;

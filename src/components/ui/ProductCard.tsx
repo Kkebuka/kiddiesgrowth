@@ -40,17 +40,15 @@ function ProductCard({
       </Link>
 
       <div className="card-body">
-        <h2 className="card-title text-base sm:text-lg line-clamp-2 h-[48px]">
+        <h2 className="card-title text-base sm:text-lg line-clamp-2   ">
           <Link to={`/shop/${id}`} className="hover:underline">
             {name}
           </Link>
         </h2>
         {/* I could make this category */}
-        <p className="text-sm sm:text-base line-clamp-3 h-[60px]">
-          {description}
-        </p>
+        <p className="text-sm sm:text-base ">{category}</p>
 
-        <div className="card-actions justify-between items-center mt-4">
+        <div className="card-actions justify-between items-center ">
           <span className="text-lg font-bold text-primary">₦{price}</span>
 
           {option && (

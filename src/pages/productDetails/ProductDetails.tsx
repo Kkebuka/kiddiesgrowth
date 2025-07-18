@@ -34,7 +34,7 @@ export default function ProductDetails() {
     <div className="p-4 w-full ">
       <div className="flex flex-col md:flex-row gap-6">
         {/* Carousel expects an array of images */}
-        <ProductImageCarousel images={[]} />
+        <ProductImageCarousel images={product?.src} />
 
         <div className="card-body">
           <h2 className="card-title text-xl sm:text-2xl font-semibold">
