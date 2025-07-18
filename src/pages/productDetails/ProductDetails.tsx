@@ -1,11 +1,18 @@
+import { useState } from "react";
 import QuantitySelector from "../../components/cart/QuantitySelector.tsx";
 import ProductImageCarousel from "../../components/cart/ProductImageCarousel.tsx";
 import { useParams } from "react-router-dom";
 import OtherProducts from "./components/OtherProducts.js";
 import { products } from "../../data/products.ts";
+import { useCart } from "../../hooks/useCart.ts";
 
 export default function ProductDetails() {
   const { id } = useParams();
+
+  const { addToCart } = useCart();
+
+  const [quantity, setQuantity] = useState(1);
+
   const product = products.find(
     (product) => product.id.toString() === id?.toString()
   );
@@ -28,7 +35,8 @@ export default function ProductDetails() {
   // }, [id, products]);
 
   // if (loading) return <div className="p-6">Loading...</div>;
-  // if (!product) return <div className="p-6 text-red-500">Product not found.</div>;
+  if (!product)
+    return <div className="p-6 text-red-500">Product not found.</div>;
 
   return (
     <div className="p-4 w-full ">
@@ -45,14 +53,18 @@ export default function ProductDetails() {
             <span className="text-lg font-bold text-green-600">
               ₦{product?.price}
             </span>
-            <QuantitySelector />
           </div>
+          <QuantitySelector quantity={quantity} setQuantity={setQuantity} />
           <h2 className="card-title  sm:text-xl  lg:text-base ">
             Category: {product?.category}
           </h2>
-          <div className="flex  gap-4">
-            <button className="btn btn-primary">Add to Cart</button>
-            <button className="btn btn-secondary">Buy Now</button>
+          <div className="flex  ">
+            <button
+              onClick={() => addToCart(product)}
+              className="btn btn-primary w-full"
+            >
+              Add to Cart
+            </button>
           </div>
         </div>
       </div>

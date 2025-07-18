@@ -1,7 +1,4 @@
-import { useState } from "react";
-export default function QuantitySelector() {
-  const [quantity, setQuantity] = useState(1);
-
+export default function QuantitySelector({ setQuantity, quantity }) {
   const increase = () => setQuantity((q) => q + 1);
   const decrease = () => setQuantity((q) => (q > 1 ? q - 1 : 1));
 
