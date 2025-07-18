@@ -20,7 +20,8 @@ export type ProductType = {
   description?: string;
   offer?: number;
   price: number;
-  option?: string;
+  // option: "Add to Cart" | "Sold Out";
+  option: string;
   quantity: number;
 };
 
