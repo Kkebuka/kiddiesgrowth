@@ -1,6 +1,7 @@
 import React, { createContext, useState, useEffect } from "react";
 import type { CartItemType, ProductType } from "../types/types";
 import { loadCart, saveCart } from "../utils/storage";
+import { showSuccess, showInfo } from "../utils/toast";
 
 type CartContextType = {
   cart: CartItemType[];
@@ -37,6 +38,7 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({
     setCart((prev) => {
       const existing = prev.find((item) => item.id === product.id);
       if (existing) {
+        showInfo("Item has been added already");
         return prev.map((item) =>
           item.id === product.id
             ? { ...item, quantity: item.quantity + 1 }
@@ -44,6 +46,7 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({
         );
       }
       console.log(prev);
+      showSuccess("Added successfully");
       return [...prev, { ...product, quantity: quantity }];
     });
   };

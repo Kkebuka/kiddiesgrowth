@@ -19,6 +19,8 @@ import ProductsPage from "./admin/pages/productsPage/AdminProducts";
 import AdminCategories from "./admin/pages/categoryPage/AdminCategories";
 import Orders from "./admin/pages/orders/Orders";
 import UsersPage from "./admin/pages/usersPage/UsersPage";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/ReactToastify.css";
 
 function App() {
   console.log(
@@ -26,31 +28,47 @@ function App() {
     import.meta.env.VITE_CLOUDINARY_UPLOAD_PRESET
   );
   return (
-    <CartProvider>
-      <Routes>
-        <Route path="/" element={<MainLayout />}>
-          <Route index path="" element={<Home />} />
-          <Route path="category" element={<Categories />} />
-          <Route path="shop" element={<Shop />} />
-          <Route path="shop/:id" element={<ProductDetails />} />
-          <Route path="login" element={<Login />} />
-          <Route path="cart" element={<CartPage />} />
-          <Route path="account" element={<AccountPage />} />
-          <Route path="about" element={<AboutUsPage />} />
-          <Route path="register" element={<Register />} />
-          <Route path="category/:categoryName" element={<CategoryProducts />} />
-        </Route>
+    <>
+      <CartProvider>
+        <Routes>
+          <Route path="/" element={<MainLayout />}>
+            <Route index path="" element={<Home />} />
+            <Route path="category" element={<Categories />} />
+            <Route path="shop" element={<Shop />} />
+            <Route path="shop/:id" element={<ProductDetails />} />
+            <Route path="login" element={<Login />} />
+            <Route path="cart" element={<CartPage />} />
+            <Route path="account" element={<AccountPage />} />
+            <Route path="about" element={<AboutUsPage />} />
+            <Route path="register" element={<Register />} />
+            <Route
+              path="category/:categoryName"
+              element={<CategoryProducts />}
+            />
+          </Route>
 
-        <Route path="/admin" element={<DashboardPage />}>
-          <Route index path="" element={<DashboardOverview />} />
-          <Route index path="add-product" element={<AddProduct />} />
-          <Route path="products" element={<ProductsPage />} />
-          <Route path="categories" element={<AdminCategories />} />
-          <Route path="orders" element={<Orders />} />
-          <Route path="users" element={<UsersPage />} />
-        </Route>
-      </Routes>
-    </CartProvider>
+          <Route path="/admin" element={<DashboardPage />}>
+            <Route index path="" element={<DashboardOverview />} />
+            <Route index path="add-product" element={<AddProduct />} />
+            <Route path="products" element={<ProductsPage />} />
+            <Route path="categories" element={<AdminCategories />} />
+            <Route path="orders" element={<Orders />} />
+            <Route path="users" element={<UsersPage />} />
+          </Route>
+        </Routes>
+      </CartProvider>
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={true}
+        closeOnClick
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="colored"
+      />
+    </>
   );
 }
 
