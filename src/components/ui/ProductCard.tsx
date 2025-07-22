@@ -2,6 +2,7 @@ import React from "react";
 import { type ProductType } from "../../types/types";
 import { Link } from "react-router-dom";
 // import { MdOutlineAddChart } from "react-icons/md";
+import { getOptimizedImage } from "../../utils/cloudinary";
 
 type ProductCardProps = ProductType & {
   onAddToCart?: (product: ProductType) => void;
@@ -26,12 +27,14 @@ function ProductCard({
     }
   };
 
+  const optimizedSrc = getOptimizedImage(src);
+
   return (
     <div className="card w-full bg-base-100 shadow-xl mx-auto hover:shadow-md transition">
       <Link to={`/shop/${id}`}>
         <figure>
           <img
-            src={`${src}?w=500&h=500&auto=format&fit=crop`} // 🌟 Optimized
+            src={optimizedSrc} // 🌟 Optimized
             alt={name}
             loading="lazy"
             className="w-full h-48 object-cover"
