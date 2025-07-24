@@ -41,7 +41,7 @@ export default function ProductDetails() {
 
   return (
     <div className="p-4 w-full ">
-      <div className="flex flex-col md:flex-row gap-6">
+      <div className="flex flex-col md:flex-row w-4/5 gap-6">
         {/* Carousel expects an array of images */}
         <ProductImageCarousel images={product?.src || []} />
 
@@ -69,6 +69,9 @@ export default function ProductDetails() {
               Add to Cart
             </button>
           </div>
+          <h2 className="mt-6 sm:text-xl  lg:text-base ">
+            For bulk order, please call 08144858370
+          </h2>
         </div>
       </div>
 

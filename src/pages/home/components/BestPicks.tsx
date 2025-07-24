@@ -2,6 +2,7 @@ import ProductCard from "../../../components/ui/ProductCard";
 import { products } from "../../../data/products";
 import { useMemo } from "react";
 import { useCart } from "../../../hooks/useCart";
+import { Link } from "react-router-dom";
 
 export default function BestPicks() {
   const { addToCart } = useCart();
@@ -28,7 +29,12 @@ export default function BestPicks() {
         ))}
       </div>
 
-      <button className="btn btn-secondary btn-sm sm:btn-md"> View More</button>
+      <Link to="/shop">
+        <button className="btn w-full btn-secondary btn-sm sm:btn-md">
+          {" "}
+          View All
+        </button>
+      </Link>
     </div>
   );
 }
