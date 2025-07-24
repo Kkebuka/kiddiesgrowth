@@ -47,7 +47,8 @@ export const products: ProductType[] = [
   {
     id: 4,
     src: [
-      "https://res.cloudinary.com/dxw2ns0gm/image/upload/v1753263293/Picsart_25-05-13_22-16-45-332_rizv4q.png",
+      "https://res.cloudinary.com/dxw2ns0gm/image/upload/v1753263505/Picsart_25-05-13_22-16-45-332_uourdh.png",
+      "https://res.cloudinary.com/dxw2ns0gm/image/upload/v1753263263/Picsart_25-05-13_22-14-03-272_beevjw.jpg",
     ],
     category: "Building Blocks",
     name: "Building block with music/light 99pcs",
@@ -244,7 +245,9 @@ export const products: ProductType[] = [
   {
     id: 18,
     src: [
-      "https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8Ym9va3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60",
+      "https://res.cloudinary.com/dxw2ns0gm/image/upload/v1753264646/Picsart_25-05-13_22-06-09-501_x6akza.jpg",
+      "https://res.cloudinary.com/dxw2ns0gm/image/upload/v1753264644/Picsart_25-05-11_22-43-22-448_ruzcjs.jpg",
+      "https://res.cloudinary.com/dxw2ns0gm/image/upload/v1753264644/Picsart_25-05-11_22-41-17-110_euiybs.png",
     ],
     category: "Stacking rings/cups",
     name: "Royal speed cup games",
