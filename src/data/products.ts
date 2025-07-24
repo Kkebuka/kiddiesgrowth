@@ -204,7 +204,8 @@ export const products: ProductType[] = [
   {
     id: 15,
     src: [
-      "https://images.unsplash.com/photo-1594782915055-7aafbcd0f8a9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8dG95JTIwYmxvY2tzfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
+      "https://res.cloudinary.com/dxw2ns0gm/image/upload/v1753264603/Picsart_25-05-13_22-09-49-844_y7hwng.jpg",
+      "https://res.cloudinary.com/dxw2ns0gm/image/upload/v1753264600/Picsart_25-05-13_22-11-44-884_fsqs0o.jpg",
     ],
     category: "Sketch boards",
     name: "Multifunction sketchpad",

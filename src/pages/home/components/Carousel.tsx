@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
+import carousel from "../../../assets/images/Login.jpg";
 
 const images = [
-  "https://images.unsplash.com/photo-1603354350266-a8de3496163b?q=80&w=871&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  "https://plus.unsplash.com/premium_photo-1701984401340-62ac0a8ab4b8?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  "https://images.unsplash.com/photo-1746210545841-46444743d2d4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzl8fGNoaWxkcmVuJTIwdG95c3xlbnwwfDB8MHx8fDA%3D",
+  carousel,
+
   "https://images.unsplash.com/photo-1725404780773-f8f4808c19c8?q=80&w=872&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
 ];
 
