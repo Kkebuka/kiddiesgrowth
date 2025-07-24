@@ -32,7 +32,7 @@ function ProductCard({
         price,
         option,
         quantity: 1,
-        offer: 2,
+        offer,
       });
     }
   };

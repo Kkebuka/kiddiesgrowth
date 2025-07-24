@@ -28,6 +28,7 @@ export const products: ProductType[] = [
     price: 89.99,
     quantity: 1,
     option: "Add to cart",
+    offer: 25,
   },
   {
     id: 3,
@@ -53,6 +54,7 @@ export const products: ProductType[] = [
     description: "Ergonomic office chair with lumbar support",
     price: 249.99,
     quantity: 1,
+    offer: 25,
     option: "Add to cart",
   },
   {
@@ -81,6 +83,7 @@ export const products: ProductType[] = [
     price: 6000,
     quantity: 1,
     option: "Add to cart",
+    offer: 25,
   },
   {
     id: 7,
@@ -95,6 +98,7 @@ export const products: ProductType[] = [
     price: 10000,
     quantity: 1,
     option: "Add to cart",
+    offer: 25,
   },
   {
     id: 8,
@@ -123,12 +127,14 @@ export const products: ProductType[] = [
     price: 7000,
     quantity: 1,
     option: "Add to cart",
+    offer: 25,
   },
   {
     id: 10,
     src: [
-      "https://images.unsplash.com/photo-1616046229478-9901c5536a45?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YWlyJTIwZnJ5ZXJ8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
-      "https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8YWlyJTIwZnJ5ZXJ8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
+      " https://res.cloudinary.com/dxw2ns0gm/image/upload/v1753264229/Picsart_25-05-13_22-29-24-909_rn2wgy.jpg",
+      "https://res.cloudinary.com/dxw2ns0gm/image/upload/v1753264230/Picsart_25-05-13_22-31-51-966_umw8lz.jpg",
+      "https://res.cloudinary.com/dxw2ns0gm/image/upload/v1753264222/Picsart_25-05-13_22-34-05-081_zbdsvv.jpg",
     ],
     category: "Flashcards",
     name: "English letter learning cards",
@@ -166,6 +172,7 @@ export const products: ProductType[] = [
     price: 4000,
     option: "Add to cart",
     quantity: 1,
+    offer: 30,
   },
   {
     id: 13,
@@ -191,6 +198,7 @@ export const products: ProductType[] = [
     price: 9000,
     option: "Add to Cart",
     quantity: 1,
+    offer: 6,
   },
   {
     id: 15,
@@ -218,6 +226,7 @@ export const products: ProductType[] = [
     price: 8000,
     option: "Add to cart",
     quantity: 1,
+    offer: 5,
   },
   {
     id: 17,
@@ -330,6 +339,7 @@ export const products: ProductType[] = [
     price: 6000,
     option: "Add to cart",
     quantity: 1,
+    offer: 12,
   },
   {
     id: 25,
