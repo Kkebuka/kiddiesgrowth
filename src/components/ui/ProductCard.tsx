@@ -23,11 +23,21 @@ function ProductCard({
   const handleAddToCart = (e: React.MouseEvent) => {
     e.stopPropagation(); // prevent navigating when button is clicked
     if (onAddToCart) {
-      onAddToCart({ id, src, category, name, description, price, option });
+      onAddToCart({
+        id,
+        src,
+        category,
+        name,
+        description,
+        price,
+        option,
+        quantity: 1,
+        offer: 2,
+      });
     }
   };
 
-  const optimizedSrc = getOptimizedImage(src);
+  const optimizedSrc = getOptimizedImage(src[0]);
 
   return (
     <div className="card w-full bg-base-100 shadow-xl mx-auto hover:shadow-md transition">
