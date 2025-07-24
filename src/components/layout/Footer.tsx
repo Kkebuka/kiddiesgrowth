@@ -23,11 +23,32 @@ export default function Footer() {
           <h6 className="footer-title">Contact Us</h6>
           <div className="grid grid-flow-col gap-4 text-4xl mb-4">
             {/* Colored Icons */}
-            <FaFacebook color="#1877F2" /> {/* Facebook Blue */}
-            <FaInstagram color="#E1306C" /> {/* Instagram Pink */}
-            <FaTiktok color="#000000" /> {/* TikTok Black */}
+            <a
+              href="https://web.facebook.com/profile.php?id=61574480862101"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {" "}
+              <FaFacebook color="#1877F2" />
+            </a>{" "}
+            <a
+              href="https://www.instagram.com/kiddiesgrowth/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {" "}
+              <FaInstagram color="#E1306C" />
+            </a>{" "}
+            <a
+              href="https://www.tiktok.com/@kiddiesgrowth?is_from_webapp=1&sender_device=pc"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {" "}
+              <FaTiktok color="#000000" />
+            </a>{" "}
           </div>
-          <a className="link link-hover flex items-center">
+          <a href="" className="link link-hover flex items-center">
             <span>
               <FaWhatsapp color="#25D366" className="text-3xl" />
             </span>
