@@ -29,9 +29,9 @@ function Header() {
     };
   }, [lastScrollY]);
   return (
-    <div className=" ">
+    <div className=" bg-base-200 shadow-md ">
       <div
-        className={`navbar bg-base-200 px-4 lg:px-12 left-0 shadow-md fixed top-0 w-full z-50 transform transition-transform duration-700 ease-in-out ${
+        className={`navbar px-4 lg:px-12 left-0  fixed top-0 w-full z-50 transform transition-transform duration-700 ease-in-out ${
           show ? "translate-y-0" : "-translate-y-full"
         }`}
       >
@@ -41,7 +41,18 @@ function Header() {
             <img src={logo} alt="" className="w-16" />
           </NavLink>
         </div>
+
         <div className="navbar-center hidden lg:flex">
+          <div className="px-12  w-[500px]">
+            <label className="input w-full rounded hidden lg:block ">
+              <input
+                type="search"
+                className="grow"
+                placeholder="Search for products eg blocks"
+              />
+              <FaSearch className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500" />
+            </label>
+          </div>
           <ul className="menu menu-horizontal px-1 space-x-6">
             <NavLink
               to="/"
@@ -102,16 +113,14 @@ function Header() {
           </NavLink>
         </div>
       </div>
-      <div className="px-4">
-        <label className="input w-full lg:hidden ">
+      <div className="px-4 ">
+        <label className="input w-full rounded block lg:hidden ">
           <input
             type="search"
             className="grow"
             placeholder="Search for products eg blocks"
           />
-          <FaSearch
-          // className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500"
-          />
+          <FaSearch className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500" />
         </label>
       </div>
     </div>

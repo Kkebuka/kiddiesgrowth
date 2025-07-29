@@ -5,7 +5,7 @@ export default function TopCategories() {
   const topFive = categories.slice(0, 5);
   return (
     <div className="shadow-md  lg:block">
-      <h4 className="text-gray-800 font-semibold text-2xl py-2 text-center">
+      <h4 className="text-gray-800 font-semibold font-fredoka text-4xl py-2 text-center">
         Top Categories
       </h4>
       <div className="flex overflow-x-auto gap-4 scrollbar-hide">

@@ -54,7 +54,7 @@ function ProductCard({
 
       <div className="card-body">
         <h2 className="card-title text-base sm:text-lg line-clamp-2   ">
-          <Link to={`/shop/${id}`} className="hover:underline">
+          <Link to={`/shop/${id}`} className="hover:underline font-fredoka">
             {name}
           </Link>
         </h2>
