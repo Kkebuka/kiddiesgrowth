@@ -29,12 +29,12 @@ function Header() {
     };
   }, [lastScrollY]);
   return (
-    <div className=" bg-base-200 shadow-md pb-3 ">
-      <div
-        className={`navbar px-4 lg:px-12 left-0  fixed top-0 w-full z-50 transform transition-transform duration-700 ease-in-out ${
-          show ? "translate-y-0" : "-translate-y-full"
-        }`}
-      >
+    <div
+      className={`bg-base-200 shadow-md pb-3 left-0  fixed top-0 w-full z-50 transform transition-transform duration-700 ease-in-out ${
+        show ? "translate-y-0" : "-translate-y-full"
+      }`}
+    >
+      <div className={`navbar px-4 lg:px-12`}>
         <MobileMenu />
         <div className="navbar-start">
           <NavLink to="/" className="">

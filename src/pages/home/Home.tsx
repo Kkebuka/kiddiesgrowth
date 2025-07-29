@@ -7,10 +7,10 @@ import { HeroSection } from "./components/HeroSection";
 
 function Home() {
   return (
-    <div className="  space-y-12">
+    <div className="  space-y-10">
       {/* <Carousel /> */}
       <HeroSection />
-      <div className="lg:px-12">
+      <div className="lg:px-12 space-y-10">
         <TopCategories />
         <TopSelling />
         <BestPicks />
