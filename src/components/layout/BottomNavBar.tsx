@@ -17,7 +17,7 @@ const BottomNavBar = () => {
   ];
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 bg-base-100 shadow-md border-t border-base-300 md:hidden">
+    <div className="fixed bottom-0 left-0 right-0 z-50 bg-base-200 shadow-md border-t border-base-300 md:hidden">
       <div className="flex justify-around items-center py-2">
         {navItems.map((item) => {
           const isActive = location.pathname === item.to;

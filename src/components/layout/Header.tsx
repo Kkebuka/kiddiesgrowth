@@ -29,7 +29,7 @@ function Header() {
     };
   }, [lastScrollY]);
   return (
-    <div className=" bg-base-200 shadow-md ">
+    <div className=" bg-base-200 shadow-md pb-3 ">
       <div
         className={`navbar px-4 lg:px-12 left-0  fixed top-0 w-full z-50 transform transition-transform duration-700 ease-in-out ${
           show ? "translate-y-0" : "-translate-y-full"
@@ -118,7 +118,7 @@ function Header() {
           <input
             type="search"
             className="grow"
-            placeholder="Search for products eg blocks"
+            placeholder="Search toys, books, STEM kits..."
           />
           <FaSearch className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500" />
         </label>
