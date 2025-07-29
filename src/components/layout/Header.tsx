@@ -31,7 +31,7 @@ function Header() {
   return (
     <div className=" ">
       <div
-        className={`navbar bg-base-100 px-4 lg:px-12 left-0 shadow-md fixed top-0 w-full z-50 transform transition-transform duration-700 ease-in-out ${
+        className={`navbar bg-base-200 px-4 lg:px-12 left-0 shadow-md fixed top-0 w-full z-50 transform transition-transform duration-700 ease-in-out ${
           show ? "translate-y-0" : "-translate-y-full"
         }`}
       >

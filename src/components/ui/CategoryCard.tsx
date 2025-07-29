@@ -9,11 +9,11 @@ export default function CategoryCard({
   return (
     <Link to={`/category/${name}`}>
       <div className="card bg-base-100 shadow-md hover:shadow-lg transition-transform hover:-translate-y-1 duration-300 h-full ">
-        <figure className="px-4 pt-4">
+        <figure className="">
           <img
             src={image}
             alt={name}
-            className="rounded-xl h-32 w-full object-cover"
+            className="rounded h-32 w-full object-cover"
             loading="lazy"
           />
         </figure>

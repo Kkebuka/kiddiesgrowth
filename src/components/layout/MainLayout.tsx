@@ -9,7 +9,7 @@ export default function MainLayout() {
   const hideFooterRoute = ["/login", "/register", "/cart"];
   const shouldHideFooter = hideFooterRoute.includes(location.pathname);
   return (
-    <div data-theme="light" className=" scroll-smooth">
+    <div data-theme="light" className=" scroll-smooth bg-base-200">
       <div className="lg:px-12 pt-20">
         <Header />
         <Outlet />

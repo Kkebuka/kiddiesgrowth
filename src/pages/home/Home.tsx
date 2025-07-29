@@ -6,7 +6,7 @@ import FloatingWhatsAppButton from "../../components/ui/FloatingWhatsappButtton"
 
 function Home() {
   return (
-    <div className="bg-base-100 p-4 space-y-12">
+    <div className=" p-4 space-y-12">
       <Carousel />
       <TopCategories />
       <TopSelling />
