@@ -2,7 +2,7 @@ import ProductCard from "../../../components/ui/ProductCard";
 import { products } from "../../../data/products";
 import { useMemo } from "react";
 import { useCart } from "../../../hooks/useCart";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 export default function TopSelling() {
   const { addToCart } = useCart();
@@ -14,11 +14,10 @@ export default function TopSelling() {
 
   return (
     <div className="flex flex-col gap-2">
-      <h4 className="text-gray-800 font-semibold text-2xl py-2  text-center">
+      <h4 className="text-gray-800 font-semibold font-fredoka text-4xl py-6 text-center">
         Top Selling Products
       </h4>
-
-      <div className="  grid grid-cols-2 gap-3  lg:grid-cols-4 ">
+      <div className="  grid grid-cols-2 gap-4  lg:grid-cols-4 ">
         {random4.map((product) => (
           // <Link to={`/shop/${product.id}`} key={product?.id}>
           <ProductCard
@@ -30,12 +29,12 @@ export default function TopSelling() {
         ))}
       </div>
 
-      <Link to="/shop">
+      {/* <Link to="/shop">
         <button className="btn w-full btn-secondary btn-sm sm:btn-md">
           {" "}
           View More
         </button>
-      </Link>
+      </Link> */}
     </div>
   );
 }

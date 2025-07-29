@@ -4,8 +4,8 @@ import { categories } from "../../../data/categories";
 export default function TopCategories() {
   const topFive = categories.slice(0, 5);
   return (
-    <div className="shadow-md  lg:block">
-      <h4 className="text-gray-800 font-semibold font-fredoka text-4xl py-4 text-center">
+    <div className="pb-4 lg:block">
+      <h4 className="text-gray-800 font-semibold font-fredoka text-4xl py-6 text-center">
         Shop by Category
       </h4>
       <div className="flex overflow-x-auto gap-4 scrollbar-hide">
