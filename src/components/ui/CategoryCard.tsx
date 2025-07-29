@@ -13,7 +13,7 @@ export default function CategoryCard({
           <img
             src={image}
             alt={name}
-            className="rounded h-32 w-full object-cover"
+            className="rounded h-44 w-full object-cover"
             loading="lazy"
           />
         </figure>
