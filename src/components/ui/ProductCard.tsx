@@ -66,7 +66,7 @@ function ProductCard({
             {category}
           </p>
         </div>
-        <Ratings />
+        <Ratings rating={4.5} />
         <div className="card-actions justify-between items-center ">
           <div className="flex gap-2 items-center">
             <h2 className="text-xl font-bold text-gray-800 font-fredoka">

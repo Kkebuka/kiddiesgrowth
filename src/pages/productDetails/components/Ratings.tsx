@@ -3,68 +3,25 @@ import React from "react";
 export default function Ratings() {
   return (
     <div>
-      <div className="rating rating-half">
-        <input
-          type="radio"
-          name="rating-readonly"
-          className="mask mask-star-2 mask-half-1 bg-yellow-400"
-          disabled
-        />
-        <input
-          type="radio"
-          name="rating-readonly"
-          className="mask mask-star-2 mask-half-2 bg-yellow-400"
-          disabled
-        />
-        <input
-          type="radio"
-          name="rating-readonly"
-          className="mask mask-star-2 mask-half-1 bg-yellow-400"
-          disabled
-        />
-        <input
-          type="radio"
-          name="rating-readonly"
-          className="mask mask-star-2 mask-half-2 bg-yellow-400"
-          disabled
-        />
-        <input
-          type="radio"
-          name="rating-readonly"
-          className="mask mask-star-2 mask-half-1 bg-yellow-400"
-          disabled
-        />
-        <input
-          type="radio"
-          name="rating-readonly"
-          className="mask mask-star-2 mask-half-2 bg-yellow-400"
-          disabled
-        />
-        <input
-          type="radio"
-          name="rating-readonly"
-          className="mask mask-star-2 mask-half-1 bg-yellow-400"
-          disabled
-        />
-        <input
-          type="radio"
-          name="rating-readonly"
-          className="mask mask-star-2 mask-half-2 bg-gray-300"
-          disabled
-        />{" "}
-        {/* half star */}
-        <input
-          type="radio"
-          name="rating-readonly"
-          className="mask mask-star-2 mask-half-1 bg-gray-300"
-          disabled
-        />
-        <input
-          type="radio"
-          name="rating-readonly"
-          className="mask mask-star-2 mask-half-2 bg-gray-300"
-          disabled
-        />
+      <div className="rating">
+        <div className="mask mask-star bg-yellow-400" aria-label="1 star"></div>
+        <div
+          className="mask mask-star  bg-yellow-400"
+          aria-label="2 star"
+        ></div>
+        <div
+          className="mask mask-star  bg-yellow-400"
+          aria-label="3 star"
+        ></div>
+        <div
+          className="mask mask-star  bg-yellow-400"
+          aria-label="4 star"
+          aria-current="true"
+        ></div>
+        <div
+          className="mask mask-star  bg-yellow-400"
+          aria-label="5 star"
+        ></div>
       </div>
     </div>
   );
