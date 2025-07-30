@@ -3,6 +3,7 @@ import { type ProductType } from "../../types/types";
 import { Link } from "react-router-dom";
 // import { MdOutlineAddChart } from "react-icons/md";
 import { getOptimizedImage } from "../../utils/cloudinary";
+import Ratings from "../../pages/productDetails/components/Ratings";
 
 type ProductCardProps = ProductType & {
   onAddToCart?: (product: ProductType) => void;
@@ -17,6 +18,7 @@ function ProductCard({
   price,
   option,
   onAddToCart,
+  offer,
 }: ProductCardProps) {
   // const navigate = useNavigate();
 
@@ -59,10 +61,19 @@ function ProductCard({
           </Link>
         </h2>
         {/* I could make this category */}
-        <p className="text-sm sm:text-base ">{category}</p>
-
+        <div className="">
+          <p className="text-xs w-fit px-2 bg-info text-base-100 py-1 rounded-md ">
+            {category}
+          </p>
+        </div>
+        <Ratings />
         <div className="card-actions justify-between items-center ">
-          <span className="text-lg font-bold text-primary">₦{price}</span>
+          <div className="flex gap-2 items-center">
+            <h2 className="text-xl font-bold text-gray-800 font-fredoka">
+              ₦{price}
+            </h2>
+            <h3 className="text-gray-500 line-through"> ₦{offer}</h3>
+          </div>
 
           {option && (
             <button
