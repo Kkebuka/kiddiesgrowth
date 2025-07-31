@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { FiArrowRight } from "react-icons/fi";
+import type { CategoryProps } from "../../types/types";
 
 export default function CategoryCard({
   name,
