@@ -3,7 +3,7 @@ import aboutImg from "../../assets/images/about-Img.jpg";
 
 export default function AboutUsPage() {
   return (
-    <div className=" pb-10 overflow-x-hidden   mx-auto">
+    <div className="  pb-8  overflow-x-hidden   mx-auto">
       <div
         className="relative w-screen h-[400px] bg-cover overflow-hidden"
         style={{ backgroundImage: `url(${aboutImg})` }}
@@ -21,7 +21,7 @@ export default function AboutUsPage() {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 grid-rows-2 lg:grid-cols-2 gap-8 mt-8 justify-center">
+      <div className="px-12 grid grid-cols-1 grid-rows-2 lg:grid-cols-2 gap-8 mt-8 justify-center">
         <section className="bg-white shadow-lg rounded-lg p-6 ">
           <h2 className="text-3xl font-semibold text-primary mb-4">
             Our Vision

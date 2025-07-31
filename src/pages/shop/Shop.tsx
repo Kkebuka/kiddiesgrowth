@@ -18,7 +18,10 @@ export default function Products() {
   const handlePageChange = (page: number) => setCurrentPage(page);
 
   return (
-    <div className="p-4 flex flex-col gap-4">
+    <div className="px-12 pb-8 flex flex-col gap-4">
+      <h4 className="text-gray-800 font-semibold font-fredoka text-4xl py-6 text-center">
+        All Products
+      </h4>
       {/* Filter Button */}
       <div className="flex justify-end">
         <button className="btn btn-outline flex items-center gap-2">
