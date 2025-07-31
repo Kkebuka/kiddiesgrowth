@@ -10,7 +10,7 @@ export default function CategoryCard({
   return (
     <Link
       to={`/category/${name}`}
-      className="group card w-full bg-base-100 shadow-xl rounded-2xl overflow-hidden hover:shadow-2xl transition-transform duration-300 hover:-translate-y-2"
+      className="group card w-full bg-base-100  rounded-2xl overflow-hidden  transition-transform duration-300 hover:-translate-y-2"
     >
       {/* Image */}
       <figure className="aspect-square overflow-hidden">
@@ -22,8 +22,9 @@ export default function CategoryCard({
       </figure>
 
       {/* Overlay Content */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex flex-col justify-end p-6">
-        <div className="text-white space-y-2">
+      <div className="absolute bottom-0 left-0 right-0 h-[35%] bg-gradient-to-t from-black/70 to-transparent flex flex-col justify-end p-4">
+        <div className="text-white space-y-1">
+          {" "}
           <h3 className="text-xl font-bold font-fredoka group-hover:text-primary transition-colors">
             {name}
           </h3>
