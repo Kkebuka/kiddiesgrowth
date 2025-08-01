@@ -23,19 +23,21 @@ export default function CartPage() {
   console.log(cart);
 
   return (
-    <div className="min-h-screen bg-base-200 p-6">
+    <div className="min-h-96 bg-base-200 p-6">
       <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-6">
-        <h2 className="text-3xl font-bold mb-6 text-center">Your Cart</h2>
+        <h2 className="text-3xl font-bold mb-6 text-center font-fredoka">
+          Your cart is empty
+        </h2>
 
         {cart.length === 0 ? (
-          <div>
+          <div className="space-y-4">
             <p className="text-center text-gray-500">
               Looks like you haven't added any amazing toys yet. Let's fix that!
             </p>
             <div className="flex justify-center">
               <Link
                 to="/shop"
-                className="bg-primary text-base-100 p-3 rounded-md"
+                className="bg-primary text-base-100 p-3 rounded-md hover:bg-neutral font-fredoka font-semibold"
               >
                 Start Shopping
               </Link>
