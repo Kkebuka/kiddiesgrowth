@@ -1,6 +1,7 @@
 import React from "react";
 import { FaTrash } from "react-icons/fa";
 import { useCart } from "../../hooks/useCart";
+import { Link } from "react-router-dom";
 
 export default function CartPage() {
   const { cart, removeFromCart, increaseQuantity, decreaseQuantity } =
@@ -27,7 +28,19 @@ export default function CartPage() {
         <h2 className="text-3xl font-bold mb-6 text-center">Your Cart</h2>
 
         {cart.length === 0 ? (
-          <p className="text-center text-gray-500">Your cart is empty.</p>
+          <div>
+            <p className="text-center text-gray-500">
+              Looks like you haven't added any amazing toys yet. Let's fix that!
+            </p>
+            <div className="flex justify-center">
+              <Link
+                to="/shop"
+                className="bg-primary text-base-100 p-3 rounded-md"
+              >
+                Start Shopping
+              </Link>
+            </div>
+          </div>
         ) : (
           <>
             <div className="space-y-4">
