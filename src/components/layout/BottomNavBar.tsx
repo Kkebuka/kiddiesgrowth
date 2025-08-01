@@ -1,9 +1,11 @@
 // BottomNavBar.tsx
+
 import { FaHome, FaLayerGroup, FaShoppingCart, FaUser } from "react-icons/fa";
 // import { Link } from "react-router-dom";
 
 const BottomNavBar = () => {
   // const location = useLocation();
+  const isAuthenticated = false;
 
   const navItems = [
     { name: "Home", icon: <FaHome size={20} />, to: "/" },
@@ -13,7 +15,11 @@ const BottomNavBar = () => {
       to: "/category",
     },
     { name: "Cart", icon: <FaShoppingCart size={20} />, to: "/cart" },
-    { name: "Account", icon: <FaUser size={20} />, to: "/account" },
+    {
+      name: "Account",
+      icon: <FaUser size={20} />,
+      to: isAuthenticated ? "/account" : "/login",
+    },
   ];
 
   return (

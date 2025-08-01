@@ -25,6 +25,7 @@ function ProductCard({
   const handleAddToCart = (e: React.MouseEvent) => {
     e.stopPropagation(); // prevent navigating when button is clicked
     if (onAddToCart) {
+      console.log("click initiated");
       onAddToCart({
         id,
         src,
