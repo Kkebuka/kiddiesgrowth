@@ -3,7 +3,7 @@ import React from "react";
 type PriceTagProps = {
   amount: number;
   size?: "sm" | "md" | "lg";
-  color?: "text-gray-800" | "text-gray-800";
+  color?: "text-gray-800" | "text-primary";
 };
 
 const sizeClassMap = {
@@ -18,7 +18,7 @@ export default function PriceTag({
   color = "text-gray-800",
 }: PriceTagProps) {
   return (
-    <h2 className={`${sizeClassMap[size]} font-bold ${color} font-fredoka`}>
+    <h2 className={`${sizeClassMap[size]} font-semibold ${color} font-fredoka`}>
       ₦{amount.toLocaleString()}
     </h2>
   );

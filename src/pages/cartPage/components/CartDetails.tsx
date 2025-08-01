@@ -32,13 +32,13 @@ export default function CartDetails({ cart }: CartDetailsProps) {
                 <h3 className="font-semibold text-lg font-fredoka">
                   {item.name}
                 </h3>
-                <PriceTag amount={item.price} />
+                <PriceTag amount={item.price} color="text-primary" />
               </div>
             </div>
             <div className="flex items-center gap-4">
               <div className="join">
                 <button
-                  className="join-item btn btn-sm"
+                  className="join-item btn btn-sm shadow-md"
                   onClick={() => decreaseQuantity(item.id)}
                 >
                   -
@@ -47,7 +47,7 @@ export default function CartDetails({ cart }: CartDetailsProps) {
                   {item.quantity}
                 </button>
                 <button
-                  className="join-item btn btn-sm"
+                  className="join-item btn btn-sm shadow-md"
                   onClick={() => increaseQuantity(item.id)}
                 >
                   +
@@ -63,8 +63,6 @@ export default function CartDetails({ cart }: CartDetailsProps) {
           </div>
         ))}
       </div>
-
-      <div className="divider"></div>
     </>
   );
 }
