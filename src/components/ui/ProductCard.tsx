@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 // import { MdOutlineAddChart } from "react-icons/md";
 import { getOptimizedImage } from "../../utils/cloudinary";
 import Ratings from "../../pages/productDetails/components/Ratings";
+import PriceTag from "./PriceTag";
 
 type ProductCardProps = ProductType & {
   onAddToCart?: (product: ProductType) => void;
@@ -70,9 +71,7 @@ function ProductCard({
         <Ratings rating={4.5} />
         <div className="card-actions justify-between items-center ">
           <div className="flex gap-2 items-center">
-            <h2 className="text-xl font-bold text-gray-800 font-fredoka">
-              ₦{price}
-            </h2>
+            <PriceTag amount={price} />
             <h3 className="text-gray-500 line-through"> ₦{offer}</h3>
           </div>
 

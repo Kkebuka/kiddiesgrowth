@@ -11,17 +11,17 @@ export default function CartPage() {
   const total =
     cart.reduce((acc, item) => acc + item.price * item.quantity, 0) || 0;
 
-  // const whatsappMessage = encodeURIComponent(
-  //   `Hello KiddiesGrowth, I'd like to place an order:\n\n${cart
-  //     .map(
-  //       (item) =>
-  //         `•[ID: ${item?.id}] ${item?.name} x${item?.quantity} - ₦${
-  //           item?.price * item?.quantity
-  //         }`
-  //     )
-  //     .join("\n")}\n\nTotal: ₦${total}`
-  // );
-  // const link = `https://api.whatsapp.com/send?phone=2348106111383&text=${whatsappMessage}`;
+  const whatsappMessage = encodeURIComponent(
+    `Hello KiddiesGrowth, I'd like to place an order:\n\n${cart
+      .map(
+        (item) =>
+          `•[ID: ${item?.id}] ${item?.name} x${item?.quantity} - ₦${
+            item?.price * item?.quantity
+          }`
+      )
+      .join("\n")}\n\nTotal: ₦${total}`
+  );
+  const link = `https://api.whatsapp.com/send?phone=2348106111383&text=${whatsappMessage}`;
   console.log(cart);
 
   return (
@@ -51,7 +51,7 @@ export default function CartPage() {
           )}
         </div>
       </div>
-      <OrderSummary total={total} />
+      <OrderSummary total={total} link={link} />
     </div>
   );
 }

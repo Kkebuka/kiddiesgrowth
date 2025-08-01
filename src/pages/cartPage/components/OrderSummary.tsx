@@ -1,11 +1,17 @@
 import React from "react";
 
-export default function OrderSummary({ total }: { total: number }) {
+export default function OrderSummary({
+  total,
+  link,
+}: {
+  total: number;
+  link: string;
+}) {
   const shipping = 0;
   return (
     <div className=" lg:flex-2/6">
       <div className="space-y-6">
-        <div className="bg-base-100 rounded-xl shadow-md p-6 sticky top-4">
+        <div className="bg-white rounded-xl shadow-md p-6 sticky top-4">
           <h2 className="text-xl font-bold font-fredoka text-gray-800 mb-4">
             Order Summary
           </h2>
@@ -52,10 +58,15 @@ export default function OrderSummary({ total }: { total: number }) {
             Checkout Securely
           </button>
 
-          <div className="text-center mt-3">
-            <button className="btn btn-outline btn-sm">
+          <div className="text-center">
+            <a
+              href={link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-success w-full mt-6  text-lg font-semibold shadow-md hover:shadow-lg transition-all"
+            >
               Checkout on WhatsApp
-            </button>
+            </a>
           </div>
         </div>
       </div>

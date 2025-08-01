@@ -1,13 +1,22 @@
 import { FaTrash } from "react-icons/fa";
 import { useCart } from "../../../hooks/useCart";
 import type { CartItemType } from "../../../types/types";
+import PriceTag from "../../../components/ui/PriceTag";
 
-export default function CartDetails(cart: CartItemType[]) {
+type CartDetailsProps = {
+  cart: CartItemType[];
+};
+
+export default function CartDetails({ cart }: CartDetailsProps) {
   const { removeFromCart, increaseQuantity, decreaseQuantity } = useCart();
 
+  const cartNumber = cart.length;
   return (
     <>
       <div className="space-y-4">
+        <h2 className="text-3xl font-semibold text-center font-fredoka">
+          Cart Details({cartNumber})
+        </h2>
         {cart.map((item) => (
           <div
             key={item.id}
@@ -20,10 +29,10 @@ export default function CartDetails(cart: CartItemType[]) {
                 className="w-20 h-20 object-cover rounded"
               />
               <div>
-                <h3 className="font-semibold text-lg">{item.name}</h3>
-                <p className="text-sm text-gray-500">
-                  ₦{item.price.toLocaleString()}
-                </p>
+                <h3 className="font-semibold text-lg font-fredoka">
+                  {item.name}
+                </h3>
+                <PriceTag amount={item.price} />
               </div>
             </div>
             <div className="flex items-center gap-4">
@@ -56,15 +65,6 @@ export default function CartDetails(cart: CartItemType[]) {
       </div>
 
       <div className="divider"></div>
-
-      {/* <a
-        href={link}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="btn btn-success w-full mt-6"
-      >
-        Checkout on WhatsApp
-      </a> */}
     </>
   );
 }
