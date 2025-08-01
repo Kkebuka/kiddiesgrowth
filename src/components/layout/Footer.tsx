@@ -45,18 +45,18 @@ export default function Footer() {
               rel="noopener noreferrer"
             >
               {" "}
-              <FaTiktok color="#000000" />
+              <FaTiktok color="#000000" className="text-3xl" />
             </a>{" "}
           </div>
-          <a href="" className="link link-hover flex items-center">
+          <a href="" className="link link-hover flex gap-1 mb-2 items-center">
             <span>
               <FaWhatsapp color="#25D366" className="text-3xl" />
             </span>
             Whatsapp: + 234 903 591 8866
           </a>
-          <a className="link link-hover  flex items-center">
+          <a className="link link-hover gap-3 flex items-center">
             <span>
-              <FaPhoneAlt color="#34B7F1" className="text-3xl" />
+              <FaPhoneAlt color="#34B7F1" className="text-2xl" />
             </span>
             Phone: + 234 903 591 8866
           </a>
