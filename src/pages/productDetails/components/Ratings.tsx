@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Ratings() {
   return (
-    <div className="flex justify-between gap-2 text-gray-500">
+    <div className="flex  gap-8 text-gray-500">
       <div>
         <div className="rating">
           <div
