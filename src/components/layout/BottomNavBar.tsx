@@ -1,7 +1,7 @@
 // BottomNavBar.tsx
 
 import { FaHome, FaLayerGroup, FaShoppingCart, FaUser } from "react-icons/fa";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const BottomNavBar = () => {
   // const location = useLocation();
@@ -28,16 +28,16 @@ const BottomNavBar = () => {
         {navItems.map((item) => {
           const isActive = location.pathname === item.to;
           return (
-            <a
+            <Link
               key={item.name}
-              href={item.to}
+              to={item.to}
               className={`flex flex-col items-center text-sm
                  ${isActive ? "text-primary" : "text-base-content"}
                 `}
             >
               {item.icon}
               <span className="text-xs">{item.name}</span>
-            </a>
+            </Link>
           );
         })}
       </div>
