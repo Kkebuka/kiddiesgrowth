@@ -22,7 +22,7 @@ export default function CategoryCard({
       </figure>
 
       {/* Overlay Content */}
-      <div className="absolute bottom-0 left-0 right-0 h-[38%] bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-4">
+      <div className="absolute bottom-0 left-0 right-0 sm:h-[45%] lg:h-[38%] bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-4">
         <div className="text-white space-y-1">
           {" "}
           <h3 className="text-xl font-bold font-fredoka group-hover:text-primary transition-colors">

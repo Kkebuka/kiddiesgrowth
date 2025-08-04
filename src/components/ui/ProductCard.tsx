@@ -44,21 +44,24 @@ function ProductCard({
   const optimizedSrc = getOptimizedImage(src[0]);
 
   return (
-    <div className="card w-full bg-base-100  mx-auto hover:shadow-md transition">
+    <div className="card w-full bg-base-100  mx-auto hover:shadow-md transition group">
       <Link to={`/shop/${id}`}>
         <figure>
           <img
             src={optimizedSrc} // 🌟 Optimized
             alt={name}
             loading="lazy"
-            className="w-full h-48 object-cover"
+            className="w-full h-48 object-cover hover:scale-110 transition-transform duration-200 "
           />
         </figure>
       </Link>
 
-      <div className="card-body">
+      <div className="card-body group">
         <h2 className="card-title text-base sm:text-lg line-clamp-2   ">
-          <Link to={`/shop/${id}`} className="hover:underline font-fredoka">
+          <Link
+            to={`/shop/${id}`}
+            className="hover:underline font-fredoka group-hover:text-primary "
+          >
             {name}
           </Link>
         </h2>

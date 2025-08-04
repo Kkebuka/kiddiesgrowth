@@ -52,9 +52,10 @@ export const HeroSection = () => {
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
                 to="/shop"
-                className="btn btn-primary text-white shadow-white shadow-xs font-semibold flex items-center gap-2"
+                className="btn btn-primary text-white shadow-white shadow-xs font-semibold flex items-center gap-2 group" // Added 'group' class
               >
-                Shop Now <FaArrowRight className="w-4 h-4" />
+                Shop Now{" "}
+                <FaArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-3" />
               </Link>
 
               <Link
