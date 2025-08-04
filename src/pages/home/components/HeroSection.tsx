@@ -49,10 +49,10 @@ export const HeroSection = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="btn btn-primary text-white font-semibold flex items-center gap-2">
+              <button className="btn btn-primary text-white shadow-white shadow-xs font-semibold flex items-center gap-2">
                 Shop Now <FaArrowRight className="w-4 h-4" />
               </button>
-              <button className="btn btn-outline border-white/40 text-white hover:bg-white/10 font-semibold">
+              <button className="btn btn-outline bg-base-200 border-white/40 text-primary hover:bg-base-200/90 font-semibold">
                 View Categories
               </button>
             </div>

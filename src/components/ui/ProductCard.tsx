@@ -44,7 +44,7 @@ function ProductCard({
   const optimizedSrc = getOptimizedImage(src[0]);
 
   return (
-    <div className="card w-full bg-base-100 shadow-xl mx-auto hover:shadow-md transition">
+    <div className="card w-full bg-base-100  mx-auto hover:shadow-md transition">
       <Link to={`/shop/${id}`}>
         <figure>
           <img
