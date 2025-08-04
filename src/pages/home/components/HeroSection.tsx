@@ -1,6 +1,7 @@
 import { AiFillStar } from "react-icons/ai";
 import { FaArrowRight } from "react-icons/fa";
 import heroImage from "../../../assets/images/hero-kids-playing.jpg";
+import { Link } from "react-router-dom";
 
 export const HeroSection = () => {
   return (
@@ -49,12 +50,19 @@ export const HeroSection = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="btn btn-primary text-white shadow-white shadow-xs font-semibold flex items-center gap-2">
+              <Link
+                to="/shop"
+                className="btn btn-primary text-white shadow-white shadow-xs font-semibold flex items-center gap-2"
+              >
                 Shop Now <FaArrowRight className="w-4 h-4" />
-              </button>
-              <button className="btn btn-outline bg-base-200 border-white/40 text-primary hover:bg-base-200/90 font-semibold">
+              </Link>
+
+              <Link
+                to="/category"
+                className="btn btn-outline bg-base-200 border-white/40 text-primary hover:bg-base-200/90 font-semibold"
+              >
                 View Categories
-              </button>
+              </Link>
             </div>
 
             {/* Social Proof */}
