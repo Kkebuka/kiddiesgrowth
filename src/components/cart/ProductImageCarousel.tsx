@@ -4,13 +4,13 @@ export default function ProductImageCarousel({ images }: { images: string[] }) {
   const [selectedIndex, setSelectedIndex] = useState(0);
 
   return (
-    <div className=" max-w-120 mx-auto">
+    <div className=" max-w-120  ">
       {/* Main Image */}
       <div className="aspect-w-1 aspect-h-1 mb-4 border rounded overflow-hidden">
         <img
           src={images[selectedIndex]}
           alt={`Product image ${selectedIndex + 1}`}
-          className="w-96 h-96  object-cover transition-all duration-300"
+          className=" w-full h-92 lg:w-120 lg:h-104  object-cover transition-all duration-300 mx-auto"
         />
       </div>
 

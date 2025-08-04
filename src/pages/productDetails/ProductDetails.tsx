@@ -5,6 +5,8 @@ import { useParams } from "react-router-dom";
 import OtherProducts from "./components/OtherProducts.js";
 import { products } from "../../data/products.ts";
 import { useCart } from "../../hooks/useCart.ts";
+import PriceTag from "../../components/ui/PriceTag.tsx";
+import type { color } from "chart.js/helpers";
 
 export default function ProductDetails() {
   const { id } = useParams();
@@ -40,25 +42,24 @@ export default function ProductDetails() {
     return <div className="p-6 text-red-500">Product not found.</div>;
 
   return (
-    <div className="p-4 w-full ">
-      <div className="flex flex-col md:flex-row w-4/5 gap-6">
+    <div className="p-4  lg:mx-12 ">
+      <div className="flex flex-col md:flex-row lg:justify-between gap-6">
         {/* Carousel expects an array of images */}
         <ProductImageCarousel images={product?.src || []} />
 
-        <div className="card-body">
-          <h2 className="card-title text-xl sm:text-2xl font-semibold">
+        <div className="flex-1">
+          <h3 className="text-3xl font-bold font-fredoka  transition-colors">
             {product?.name}
+          </h3>
+          <h2 className="card-title  sm:text-xl  text-gray-500 lg:text-base ">
+            Category: {product?.category}
           </h2>
 
           <div className="card-actions justify-between lg:justify-start items-center mt-4">
-            <span className="text-lg font-bold text-green-600">
-              ₦{product?.price}
-            </span>
+            <PriceTag amount={product?.price} color={"text-primary"} />
           </div>
           <QuantitySelector quantity={quantity} setQuantity={setQuantity} />
-          <h2 className="card-title  sm:text-xl  lg:text-base ">
-            Category: {product?.category}
-          </h2>
+
           <div className="flex  ">
             <button
               onClick={() => {
