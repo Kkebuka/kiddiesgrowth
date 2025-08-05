@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import type { ProductType } from "../../../types/types";
 
 const AddProduct = () => {

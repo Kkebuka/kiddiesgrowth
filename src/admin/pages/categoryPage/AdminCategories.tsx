@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { FiEdit2, FiTrash2, FiPlus } from "react-icons/fi";
 
 const cloud_Name = "your_cloud_name"; // 🔁 Replace with your Cloudinary cloud name
