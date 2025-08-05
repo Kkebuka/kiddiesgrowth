@@ -1,4 +1,3 @@
-import React from "react";
 import type { UserType } from "../../../types/types";
 
 export default function UsersPage() {
