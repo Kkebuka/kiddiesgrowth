@@ -22,7 +22,6 @@ function Header() {
     setLastScrollY(window.scrollY);
   };
 
-  useEff;
   useEffect(() => {
     window.addEventListener("scroll", controlNavbar);
     return () => {
