@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import logo from "../../assets/images/kiddies-growth-no_BG.png";
 import { FaShoppingCart, FaUser } from "react-icons/fa";
 import { FaSearch } from "react-icons/fa";
@@ -11,7 +11,7 @@ function Header() {
 
   const [show, setShow] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const isAuthenticated = false;
 
   const controlNavbar = () => {
     if (window.scrollY > lastScrollY) {
@@ -22,6 +22,7 @@ function Header() {
     setLastScrollY(window.scrollY);
   };
 
+  useEff;
   useEffect(() => {
     window.addEventListener("scroll", controlNavbar);
     return () => {

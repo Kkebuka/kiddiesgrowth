@@ -1,7 +1,22 @@
 // context/AuthContext.tsx
 import { createContext, useContext, useState, useEffect } from "react";
 
-const AuthContext = createContext<any>(null);
+// Define the shape of your user
+type User = {
+  id: string;
+  email: string;
+  name?: string;
+  // add any other user properties
+};
+
+// Define the shape of the AuthContext
+type AuthContextType = {
+  user: User | null;
+  login: (credentials: { email: string; password: string }) => Promise<unknown>;
+  logout: () => Promise<void>;
+};
+
+const AuthContext = createContext<AuthContextType | null>(null);
 
 export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   const [user, setUser] = useState(null);

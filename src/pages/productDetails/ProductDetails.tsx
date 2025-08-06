@@ -6,7 +6,7 @@ import OtherProducts from "./components/OtherProducts.js";
 import { products } from "../../data/products.ts";
 import { useCart } from "../../hooks/useCart.ts";
 import PriceTag from "../../components/ui/PriceTag.tsx";
-import type { color } from "chart.js/helpers";
+// import type { color } from "chart.js/helpers";
 import Ratings from "./components/Ratings.tsx";
 
 export default function ProductDetails() {

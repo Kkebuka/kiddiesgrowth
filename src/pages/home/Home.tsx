@@ -1,4 +1,3 @@
-import Carousel from "./components/Carousel";
 import TopCategories from "./components/TopCategories";
 import TopSelling from "./components/TopSelling";
 import BestPicks from "./components/BestPicks";
