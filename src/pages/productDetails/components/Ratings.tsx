@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function Ratings() {
   return (
     <div className="flex  gap-8 text-gray-500">
