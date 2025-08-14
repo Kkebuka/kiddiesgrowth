@@ -58,7 +58,7 @@ function Header() {
               to="/"
               className={({ isActive }) =>
                 isActive
-                  ? "text-primary font-bold  border-b-2 border-blue-600"
+                  ? "text-primary font-bold  border-b-2 border-primary"
                   : "text-gray-500"
               }
             >
@@ -68,7 +68,7 @@ function Header() {
               to="/shop"
               className={({ isActive }) =>
                 isActive
-                  ? "text-primary font-bold  border-b-2 border-blue-600"
+                  ? "text-primary font-bold  border-b-2 border-primary"
                   : "text-gray-500"
               }
             >
@@ -78,7 +78,7 @@ function Header() {
               to="/category"
               className={({ isActive }) =>
                 isActive
-                  ? "text-primary font-bold  border-b-2 border-blue-600"
+                  ? "text-primary font-bold  border-b-2 border-primary"
                   : "text-gray-500"
               }
             >
@@ -88,7 +88,7 @@ function Header() {
               to="/about"
               className={({ isActive }) =>
                 isActive
-                  ? "text-primary font-bold  border-b-2 border-blue-600"
+                  ? "text-primary font-bold  border-b-2 border-primary"
                   : "text-gray-500"
               }
             >
