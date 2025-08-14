@@ -1,3 +1,5 @@
+import PaystackButton from "../../../components/ui/PaystackButton";
+
 export default function OrderSummary({
   total,
   link,
@@ -55,7 +57,18 @@ export default function OrderSummary({
           <button className="btn btn-primary w-full mt-6 text-lg font-semibold shadow-md hover:shadow-lg transition-all">
             Checkout Securely
           </button>
-
+          <PaystackButton
+            amount={4000}
+            metadata={{
+              custom_fields: [
+                {
+                  display_name: "Customer Name",
+                  variable_name: "customer_name",
+                  value: "John Doe",
+                },
+              ],
+            }}
+          />
           <div className="text-center">
             <a
               href={link}
