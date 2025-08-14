@@ -21,6 +21,7 @@ import Orders from "./admin/pages/orders/Orders";
 import UsersPage from "./admin/pages/usersPage/UsersPage";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/ReactToastify.css";
+import ContactPage from "./pages/contagePage/ContactPage";
 
 function App() {
   console.log(
@@ -41,6 +42,7 @@ function App() {
             <Route path="account" element={<AccountPage />} />
             <Route path="about" element={<AboutUsPage />} />
             <Route path="register" element={<Register />} />
+            <Route path="contact" element={<ContactPage />} />
             <Route
               path="category/:categoryName"
               element={<CategoryProducts />}
