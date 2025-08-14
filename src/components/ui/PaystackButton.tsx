@@ -1,8 +1,8 @@
-import React from "react";
+import { showInfo, showSuccess } from "../../utils/toast";
 
 const PaystackButton = ({ amount, metadata }) => {
-  const paystack = import.meta.env.PayStack_test_PublicKey;
-  console.log(import.meta.env.PayStack_test_PublicKey, "working");
+  const paystack = import.meta.env.VITE_PAYSTACK_TESTKEY;
+  // Remember you are going to install paystack via npm and remove script from index file
   const email = "ronkecyn@gmail.com";
   const payWithPaystack = () => {
     const handler = window.PaystackPop.setup({
@@ -23,12 +23,17 @@ const PaystackButton = ({ amount, metadata }) => {
     handler.openIframe();
   };
 
+  const handleClick = () => {
+    showInfo("Login in to use Paystack");
+  };
+
   return (
     <button
-      onClick={payWithPaystack}
-      className="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg shadow"
+      //   onClick={payWithPaystack}
+      onClick={handleClick}
+      className="btn btn-primary w-full mt-6 text-lg font-semibold shadow-md hover:shadow-lg transition-all"
     >
-      Pay Now
+      Checkout with Paystack
     </button>
   );
 };

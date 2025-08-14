@@ -54,9 +54,9 @@ export default function OrderSummary({
             </div>
           </div>
 
-          <button className="btn btn-primary w-full mt-6 text-lg font-semibold shadow-md hover:shadow-lg transition-all">
+          {/* <button className="btn btn-primary w-full mt-6 text-lg font-semibold shadow-md hover:shadow-lg transition-all">
             Checkout Securely
-          </button>
+          </button> */}
           <PaystackButton
             amount={4000}
             metadata={{
