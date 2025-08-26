@@ -117,7 +117,7 @@ Please get back to me. Thank you!`;
               type="submit"
               className="w-full bg-blue-500 hover:bg-blue-600 text-white py-3 rounded-lg transition-transform duration-200 hover:scale-[1.02]"
             >
-              Send Message via WhatsApp
+              Send Message
             </button>
           </form>
         </div>
@@ -134,17 +134,17 @@ Please get back to me. Thank you!`;
               {
                 icon: <FaWhatsapp className="w-5 h-5 text-green-500" />,
                 title: "WhatsApp",
-                value: "+234 800 000 0000",
+                value: "+234 8144858379",
               },
               {
                 icon: <FaEnvelope className="w-5 h-5 text-blue-500" />,
                 title: "Email",
-                value: "hello@kiddiesgrowth.com",
+                value: "kiddiesgrowth@gmail.com",
               },
               {
                 icon: <FaPhone className="w-5 h-5 text-orange-500" />,
                 title: "Phone",
-                value: "+234 800 000 0000",
+                value: "+234 8144858370",
               },
               {
                 icon: <FaMapMarkerAlt className="w-5 h-5 text-red-500" />,
@@ -163,7 +163,7 @@ Please get back to me. Thank you!`;
           </div>
 
           {/* Quick WhatsApp Chat */}
-          <div className="bg-green-50 rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow duration-300">
+          {/* <div className="bg-green-50 rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow duration-300">
             <h3 className="text-lg font-semibold text-green-800 mb-3">
               Quick Chat on WhatsApp
             </h3>
@@ -178,7 +178,7 @@ Please get back to me. Thank you!`;
               <FaWhatsapp className="w-4 h-4" />
               Chat on WhatsApp
             </button>
-          </div>
+          </div> */}
 
           {/* Business Hours */}
           <div className="bg-blue-50 rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow duration-300">
