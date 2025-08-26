@@ -41,14 +41,6 @@ Please get back to me. Thank you!`;
     });
   };
 
-  const handleWhatsAppDirect = () => {
-    const message = "Hello! I'd like to know more about KiddiesGrowth toys.";
-    const whatsappUrl = `https://wa.me/2348000000000?text=${encodeURIComponent(
-      message
-    )}`;
-    window.open(whatsappUrl, "_blank");
-  };
-
   return (
     <div className="container mx-auto px-4 py-8">
       {/* Heading */}
