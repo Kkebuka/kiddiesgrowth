@@ -32,7 +32,6 @@ const createProduct = async (req, res, next) => {
       offer,
       quantity,
       option,
-      stock,
     });
     const savedProduct = await product.save();
     res.status(201).json(savedProduct);
