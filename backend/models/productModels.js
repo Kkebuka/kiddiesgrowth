@@ -8,7 +8,7 @@ const productSchema = new mongoose.Schema(
     category: { type: String, required: [true, "Category is required"] },
     src: { type: String },
     offer: { type: Number },
-    option: { type: String },
+    option: { type: String, enum: ["Add to Cart", "Sold Out"] },
     quantity: { type: Number, default: 0 },
   },
   {
