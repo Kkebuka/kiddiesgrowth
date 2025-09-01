@@ -14,17 +14,11 @@ app.use(express.json());
 app.use(cors());
 app.use(morgan("dev"));
 
-connectDB();
 const startServer = async () => {
-  try {
-    await connectDB(
-      app.listen(PORT, () => {
-        console.log(`server running on http://localhost:${PORT}`);
-      })
-    );
-  } catch (error) {
-    console.log("Error starting server", error);
-  }
+  await connectDB();
+  app.listen(PORT, () => {
+    console.log(`Server running on http://localhost:${PORT}`);
+  });
 };
 
 startServer();
