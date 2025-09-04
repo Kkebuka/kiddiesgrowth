@@ -3,8 +3,8 @@ import cors from "cors";
 import dotenv from "dotenv";
 import connectDB from "./config/db.js";
 import morgan from "morgan";
-import router from "./routes/productRoutes.js";
-import authRoute from "./routes/authRoutes.js";
+import { router as productRoute } from "./routes/productRoutes.js";
+import { router as authRoute } from "./routes/authRoutes.js";
 
 dotenv.config();
 
@@ -14,7 +14,7 @@ const PORT = process.env.PORT || 5000;
 app.use(express.json());
 app.use(cors());
 app.use(morgan("dev"));
-app.use("/products", router);
+app.use("/products", productRouter);
 app.use("/auth", authRoute);
 
 const startServer = async () => {
