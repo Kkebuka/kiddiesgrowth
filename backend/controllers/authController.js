@@ -1,4 +1,4 @@
-import User from "../models/userModel.js";
+import User from "../models/userModels.js";
 import jwt from "jsonwebtoken";
 
 // Generate JWT
@@ -9,7 +9,7 @@ const generateToken = (id) => {
 // @desc Register new user
 export const registerUser = async (req, res, next) => {
   try {
-    const { name, email, password } = req.body;
+    const { name, email, password, role } = req.body;
 
     const userExists = await User.findOne({ email });
     if (userExists)
