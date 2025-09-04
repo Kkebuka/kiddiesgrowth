@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 import connectDB from "./config/db.js";
 import morgan from "morgan";
 import router from "./routes/productRoutes.js";
+import authRoute from "./routes/authRoutes.js";
 
 dotenv.config();
 
@@ -14,6 +15,7 @@ app.use(express.json());
 app.use(cors());
 app.use(morgan("dev"));
 app.use("/products", router);
+app.use("/auth", authRoute);
 
 const startServer = async () => {
   await connectDB();
