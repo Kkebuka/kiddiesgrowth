@@ -4,11 +4,11 @@ import User from "../models/userModels.js";
 export const protect = async (req, res, next) => {
   let token;
   if (
-    res.headers.authoriztion &&
-    req.headers.authoriztion.startsWith("Bearer")
+    req.headers.authorization &&
+    req.headers.authorization.startsWith("Bearer")
   ) {
     try {
-      token = req.headers.authoriztion.split("")[1];
+      token = req.headers.authorization.split(" ")[1];
       const decoded = jwt.verify(token, process.env.JWT_SECRET);
       req.user = await User.findById(decoded.id).select("-password");
       next();
@@ -16,7 +16,6 @@ export const protect = async (req, res, next) => {
       res.status(401).json({ message: "Not authorized, token failed" });
     }
   }
-
   if (!token) {
     res.status(401).json({ message: "Not authorized, no token" });
   }
